@@ -24,8 +24,8 @@ header {
       height: auto;
       h1{
           padding-top: 8%;
-          margin-right: 5%;
-          font-size: 230%;
+          margin-right: 0%;
+          font-size: 100%;
           text-align: end;
 
           font-family: $fontPrincipalbold;
@@ -42,8 +42,8 @@ header {
               width: 100%;
               text-align: center;
               div{
-                  height: 35em;
-                  width: 35em;
+                  height: 20em;
+                  width: 100%;
                   background-color: yellow;
                   margin-left: auto;
               margin-right: auto;
@@ -57,14 +57,14 @@ header {
                   margin-top: 5%;
                   margin-bottom: 0%;
                   font-family: $fontPrincipalSmall;
-                  font-size: 6em;
+                  font-size: 3em;
                   color: $colorPrimary;
 
               }
               h3{
                   margin-top: 0%;
                   margin-bottom: 0%;
-                  font-size: 2.3em;
+                  font-size: 1.3em;
                   color: $colorPrimary;
                   font-family: $fontPrincipalSmall;
               }
@@ -72,7 +72,7 @@ header {
                 margin-bottom: 0%;
 
                 margin-top: 0%;
-                font-size: 1.9em;
+                font-size: 0.9em;
                 color: black;
                 font-family: $fontPrincipalSmall;
 
@@ -82,8 +82,9 @@ header {
                 margin-bottom: 0%;
 
                 margin-top: 0%;
-                font-size: 2.0em;
+                font-size: 1.0em;
                 color: grey;
+                font-family: $fontPrincipalSmall;
 
               }
               nav{
