@@ -1,0 +1,101 @@
+@import "Ui.scss";
+@import "custom.scss";
+
+
+
+header {
+    overflow:hidden;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    img{
+        padding-top: 5%;
+        padding-left: 5%;
+        width: 40%;
+    }
+        
+    
+  
+  }
+
+  main{
+      position: relative;
+      width: 100%;
+      height: auto;
+      h1{
+          padding-top: 8%;
+          margin-right: 5%;
+          font-size: 230%;
+          text-align: end;
+
+          font-family: $fontPrincipalbold;
+          color: $colorPrimary;
+
+      }
+      section{
+        margin-top: 30%;
+        margin-left: auto;
+              margin-right: auto;
+              display: flex;
+              flex-direction: column;
+          article{
+              width: 100%;
+              text-align: center;
+              div{
+                  height: 35em;
+                  width: 35em;
+                  background-color: yellow;
+                  margin-left: auto;
+              margin-right: auto;
+              border-radius: 50%;
+              background-image: url("../Sample_Photos/Mimi/Portrait_Nora.jpg");
+              background-position: 50% 40%;
+              background-size: 160%;
+
+              }
+              h2{
+                  margin-top: 5%;
+                  margin-bottom: 0%;
+                  font-family: $fontPrincipalSmall;
+                  font-size: 6em;
+                  color: $colorPrimary;
+
+              }
+              h3{
+                  margin-top: 0%;
+                  margin-bottom: 0%;
+                  font-size: 2.3em;
+                  color: $colorPrimary;
+                  font-family: $fontPrincipalSmall;
+              }
+              h4{
+                margin-bottom: 0%;
+
+                margin-top: 0%;
+                font-size: 1.9em;
+                color: black;
+                font-family: $fontPrincipalSmall;
+
+              }
+              p{
+
+                margin-bottom: 0%;
+
+                margin-top: 0%;
+                font-size: 2.0em;
+                color: grey;
+
+              }
+              nav{
+                  ul{
+                      justify-content: center;
+                      display: flex;
+                  }
+              }
+
+
+          }
+      }
+
+      
+  }

@@ -1,0 +1,13 @@
+
+@font-face {
+    font-family: 'DMSans';
+    src: url("DM_Sans/DMSans-Medium.ttf");
+  }
+  @font-face {
+    font-family: 'DMSansSmall';
+    src: url("DM_Sans/DMSans-Regular.ttf");
+  }
+
+$colorPrimary : #901C1C;
+$fontPrincipalbold : "DMSans";
+$fontPrincipalSmall :"DMSansSmall";
