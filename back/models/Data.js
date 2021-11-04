@@ -68,7 +68,7 @@ const products = [
         "events",
         "animals"
       ],
-      "tagline": "Je crÃ©e des souvenirs",
+      "tagline": "Je crée des souvenirs",
       "price": 275,
       "portrait": "RhodeDubois.jpg"
     },
@@ -81,7 +81,7 @@ const products = [
         "travel",
         "architecture"
       ],
-      "tagline": "Toujours Ã&nbsp; la recherche de LA photo",
+      "tagline": "Toujours à la recherche de LA photo",
       "price": 300,
       "portrait": "MarcelNikolic.jpg"
     }

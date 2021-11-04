@@ -144,7 +144,7 @@ main section article p {
   font-family: "DMSansSmall";
 }
 
-main section article nav ul {
+main section article ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;

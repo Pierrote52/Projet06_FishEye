@@ -1,4 +1,4 @@
-const uuid = require('uuid/v1');
+
 const Data = require('../models/Data');
 
 exports.getAllDatas = (req, res, next) => {
