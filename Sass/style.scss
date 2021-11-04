@@ -1,8 +1,6 @@
 @import "Ui.scss";
 @import "custom.scss";
 
-
-
 header {
     overflow:hidden;
     position: absolute;
@@ -33,7 +31,7 @@ header {
 
       }
       section{
-        margin-top: 30%;
+        margin-top: 15ex;
         margin-left: auto;
               margin-right: auto;
               display: flex;
@@ -42,13 +40,13 @@ header {
               width: 100%;
               text-align: center;
               div{
-                  height: 23em;
+                  height: 53ex;
                   width: 100%;
                   background-color: yellow;
+                  background-image: none;
                   margin-left: auto;
               margin-right: auto;
               border-radius: 50%;
-              background-image: url("../Sample_Photos/Mimi/Portrait_Nora.jpg");
               background-position: 50% 40%;
               background-size: 160%;
 

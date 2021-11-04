@@ -83,7 +83,7 @@ main h1 {
 }
 
 main section {
-  margin-top: 30%;
+  margin-top: 15ex;
   margin-left: auto;
   margin-right: auto;
   display: -webkit-box;
@@ -101,13 +101,13 @@ main section article {
 }
 
 main section article div {
-  height: 23em;
+  height: 53ex;
   width: 100%;
   background-color: yellow;
+  background-image: none;
   margin-left: auto;
   margin-right: auto;
   border-radius: 50%;
-  background-image: url("../Sample_Photos/Mimi/Portrait_Nora.jpg");
   background-position: 50% 40%;
   background-size: 160%;
 }
