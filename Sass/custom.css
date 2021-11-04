@@ -38,4 +38,8 @@ ul li {
   font-family: "DMSans";
   color: #901C1C;
 }
+
+ul li:hover {
+  background-color: blue;
+}
 /*# sourceMappingURL=custom.css.map */

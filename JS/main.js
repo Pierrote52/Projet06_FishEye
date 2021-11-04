@@ -24,6 +24,7 @@ function showProducts(data) {
         //Je vais creer les Tags pour mes Photographes.
         for(tag of product["photographers"][i].tags){
           let li = document.createElement("LI");
+          li.className = `test`;
           li.innerHTML = `#${tag}`;
           ul.appendChild(li);
         }
@@ -41,8 +42,15 @@ function showProducts(data) {
       }
       
     }
-    
+    //#################ICI on recupere les li de la nav pour manager la navigation#####################
+    let ulNav = document.getElementsByTagName("header")[0].getElementsByTagName("nav")[0].getElementsByTagName("UL")[0];
+    let LiDeLaNavPrincipale = ulNav.getElementsByTagName("LI");
 
-    function Filtre(){
-      console.log('Cliked');
+    for(li of LiDeLaNavPrincipale){
+      let content = li.innerHTML;
+      li.addEventListener('click', function (){
+        console.log(content)
+      })
+      
     }
+

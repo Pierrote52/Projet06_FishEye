@@ -2,6 +2,7 @@
 @import "custom.scss";
 
 header {
+    z-index: 2;
     overflow:hidden;
     position: absolute;
     display: flex;
@@ -11,9 +12,6 @@ header {
         padding-left: 5%;
         width: 40%;
     }
-        
-    
-  
   }
 
   main{

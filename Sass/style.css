@@ -49,7 +49,12 @@ ul li {
   color: #901C1C;
 }
 
+ul li:hover {
+  background-color: blue;
+}
+
 header {
+  z-index: 2;
   overflow: hidden;
   position: absolute;
   display: -webkit-box;

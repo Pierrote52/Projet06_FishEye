@@ -20,6 +20,9 @@ ul{
         margin-bottom: 2%;
         font-family: $fontPrincipalbold;
         color: $colorPrimary;
+        &:hover{
+            background-color: blue;
+        }
+    }
 
-    }}
-    
+}
