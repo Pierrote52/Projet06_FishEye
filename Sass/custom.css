@@ -39,7 +39,17 @@ ul li {
   color: #901C1C;
 }
 
-ul li:hover {
-  background-color: blue;
+ul .clicked {
+  font-size: 25%;
+  list-style-type: none;
+  border-style: solid;
+  border-width: 1px;
+  border-color: gray;
+  border-radius: 30px;
+  padding: 1% 1.5% 1% 1.5%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  background-color: #901C1C;
+  color: blanchedalmond;
 }
 /*# sourceMappingURL=custom.css.map */

@@ -20,9 +20,20 @@ ul{
         margin-bottom: 2%;
         font-family: $fontPrincipalbold;
         color: $colorPrimary;
-        &:hover{
-            background-color: blue;
-        }
+        
+    }
+    .clicked{
+        font-size: 25%;
+        list-style-type: none;
+        border-style: solid;
+        border-width: 1px;
+        border-color: gray;
+        border-radius: 30px;
+        padding: 1% 1.5% 1% 1.5%;
+        margin-right: 2%;
+        margin-bottom: 2%;
+        background-color: $colorPrimary;
+        color: blanchedalmond;
     }
 
 }
