@@ -1,14 +1,9 @@
 
 var section = document.getElementsByTagName("SECTION")[0];
-fetch('http://localhost:3000/api/datas')
-  .then(res => res.json())
-  .then(data => { 
-    showProducts(data);
-  })
-  .catch(_error => {
-    alert('Oops ! Le serveur ne répond pas.');
-  });
-
+const data = async ()=>{
+  return await fetch('https://raw.githubusercontent.com/Pierrote52/Projet06_FishEye/master/JSON.json').then((v)=>{return v.json()}).then(v=>{return [v]});
+}
+data().then(v=>showProducts(v))
   //---------J'AFFICHE TOUS LES PRODUITS---------
 
 function showProducts(data) {
@@ -16,7 +11,7 @@ function showProducts(data) {
       for(let i = 0; i<product.photographers.length; i++){
 
         const itemCard = document.getElementById('items');
-        var articleContent = `<div id ="${product["photographers"][i].portrait}"></div><h2>${product["photographers"][i].name}</h2><h3>${product["photographers"][i].city}</h3><h4>${product["photographers"][i].tagline}</h4><p>${product["photographers"][i].price}€/jour</p><ul></ul>`
+        var articleContent = `<a href = "../photographe.html?id=${product["photographers"][i].id}"><div id ="${product["photographers"][i].portrait}"></div><h2>${product["photographers"][i].name}</h2><h3>${product["photographers"][i].city}</h3><h4>${product["photographers"][i].tagline}</h4><p>${product["photographers"][i].price}€/jour</p><ul></ul></a>`
         
         var article = document.createElement("ARTICLE");
         article.innerHTML = articleContent;

@@ -82,6 +82,10 @@ header img {
   width: 40%;
 }
 
+a {
+  text-decoration: none;
+}
+
 main {
   position: relative;
   width: 100%;

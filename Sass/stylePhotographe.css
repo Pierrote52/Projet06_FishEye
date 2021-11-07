@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'DMSans';
+  src: url("DM_Sans/DMSans-Medium.ttf");
+}
+
+@font-face {
+  font-family: 'DMSansSmall';
+  src: url("DM_Sans/DMSans-Regular.ttf");
+}
+
+img {
+  margin-top: 10%;
+  margin-left: 5%;
+  width: 50%;
+}
+
+body {
+  position: relative;
+}
+
+h1 {
+  margin-right: 30%;
+  margin-left: 3%;
+  font-family: "DMSansSmall";
+  color: #cd563f;
+  font-size: 6ex;
+  margin-bottom: 0px;
+}
+
+h2 {
+  margin-top: 0px;
+  margin-left: 3%;
+  font-family: "DMSansSmall";
+  color: #901C1C;
+  font-size: 2.5ex;
+  margin-bottom: 1ex;
+}
+
+h3 {
+  margin-top: 0px;
+  margin-left: 3%;
+  font-family: "DMSansSmall";
+  color: grey;
+  font-size: 2ex;
+}
+
+div {
+  top: 15ex;
+  right: 1ex;
+  position: absolute;
+  width: 15ex;
+  height: 15ex;
+  background-image: url("../assets/Sample_Photos/profils/MimiKeel.jpg");
+  background-position: center;
+  background-size: 27ex;
+  border-radius: 100%;
+}
+/*# sourceMappingURL=stylePhotographe.css.map */

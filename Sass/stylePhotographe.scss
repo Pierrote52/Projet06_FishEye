@@ -1,0 +1,48 @@
+@import "Ui.scss";
+img {
+    margin-top: 10%;
+    margin-left: 5%;
+    width: 50%;
+}
+
+body {
+    position: relative;
+}
+
+h1 {
+    margin-right: 30%;
+    margin-left: 3%;
+    font-family: $fontPrincipalSmall;
+    color: $colorOrange;
+    font-size: 6ex;
+    margin-bottom: 0px;
+}
+
+h2 {
+    margin-top: 0px;
+    margin-left: 3%;
+    font-family: $fontPrincipalSmall;
+    color: $colorPrimary;
+    font-size: 2.5ex;
+    margin-bottom: 1ex;
+}
+
+h3 {
+    margin-top: 0px;
+    margin-left: 3%;
+    font-family: $fontPrincipalSmall;
+    color: grey;
+    font-size: 2ex;
+}
+
+div {
+    top: 15ex;
+    right: 1ex;
+    position: absolute;
+    width: 15ex;
+    height: 15ex;
+    background-image: url("../assets/Sample_Photos/profils/MimiKeel.jpg");
+    background-position: center;
+    background-size: 27ex;
+    border-radius: 100%;
+}
