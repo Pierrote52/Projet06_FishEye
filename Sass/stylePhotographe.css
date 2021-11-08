@@ -103,4 +103,13 @@ article .TitreEtLikes {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+
+article .TitreEtLikes p {
+  font-family: "DMSansSmall";
+  font-size: 19px;
+  color: #901C1C;
+  margin-top: 3%;
+  margin-left: 1%;
+  margin-bottom: 3%;
+}
 /*# sourceMappingURL=stylePhotographe.css.map */

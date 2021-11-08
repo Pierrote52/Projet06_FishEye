@@ -56,6 +56,7 @@ function filtrePhotos(data) {
 
 function createPhoto(Listmedia) {
     let section = document.getElementsByTagName("SECTION")[0];
+
     for (media of Listmedia) {
         let article = document.createElement("ARTICLE");
         article.innerHTML = "<div class=\"image\"></div>" +
@@ -63,26 +64,29 @@ function createPhoto(Listmedia) {
             "<p>" +
             media.title +
             "</p>" +
-            "<p>" +
-            media.likes +
 
-            "</p>" +
             "</div>" +
             "</article>";
         let url = getUrlImage(media);
         let divImg = article.getElementsByTagName("DIV")[0];
+        divTitreEtLikes = article.getElementsByClassName("TitreEtLikes")[0];
+        let newP = document.createElement("P");
+        newP.innerHTML = media.likes;
+        newP.addEventListener("click", function() {
+            console.log(parseInt(newP.innerHTML));
+            let newInt = parseInt(newP.innerHTML) + 1;
+            newP.innerHTML = newInt;
+        })
+        divTitreEtLikes.appendChild(newP);
+
         divImg.style.backgroundImage = url;
-        console.log(url)
+
         section.appendChild(article);
-
-
-
     }
 }
 
 function getUrlImage(media) {
     let fileName = currentPhotographe.name.split(' ');
-    console.log(fileName[0]);
     return ` url("../assets/Sample_Photos/${fileName[0]}/${media.image}")`;
 
 

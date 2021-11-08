@@ -82,5 +82,13 @@
         .TitreEtLikes {
             display: flex;
             justify-content: space-between;
+            p {
+                font-family: $fontPrincipalSmall;
+                font-size: 19px;
+                color: $colorPrimary;
+                margin-top: 3%;
+                margin-left: 1%;
+                margin-bottom: 3%;
+            }
         }
     }
