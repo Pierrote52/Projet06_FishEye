@@ -1,5 +1,7 @@
 let idPhotographe = new URL(window.location.href).searchParams.get('id');
 let currentPhotographe;
+let section = document.getElementsByTagName("SECTION")[0];
+let listMedia = [];
 
 
 console.log(idPhotographe);
@@ -16,9 +18,7 @@ function takeCurrentPhotographe(data) {
         if (photographe.id == idPhotographe) {
             currentPhotographe = photographe;
             displayPhotographeInfo(photographe);
-
         }
-
     }
     filtrePhotos(data);
 }
@@ -44,20 +44,20 @@ function displayPhotographeInfo(photographe) {
 
 //Cette fonction va recuperer les photos présentes dans la galerie pour les afficher. 
 function filtrePhotos(data) {
-    let listMedia = [];
+
     for (media of data.media) {
         if (media.photographerId == idPhotographe) {
             listMedia.push(media);
-
         }
     }
     createPhoto(listMedia, data.photographers);
 }
 
 function createPhoto(Listmedia) {
-    let section = document.getElementsByTagName("SECTION")[0];
+
 
     for (media of Listmedia) {
+        //Cree la structure minimum d'un article
         let article = document.createElement("ARTICLE");
         article.innerHTML = "<div class=\"image\"></div>" +
             "<div class = \"TitreEtLikes\">" +
@@ -67,27 +67,52 @@ function createPhoto(Listmedia) {
 
             "</div>" +
             "</article>";
-        let url = getUrlImage(media);
-        let divImg = article.getElementsByTagName("DIV")[0];
+
+
+        //Met en place la barre pour les likes 
         divTitreEtLikes = article.getElementsByClassName("TitreEtLikes")[0];
         let newP = document.createElement("P");
         newP.innerHTML = media.likes;
+        //Sur click cela incremente le nombre de Likes
         newP.addEventListener("click", function() {
-            console.log(parseInt(newP.innerHTML));
             let newInt = parseInt(newP.innerHTML) + 1;
             newP.innerHTML = newInt;
         })
         divTitreEtLikes.appendChild(newP);
 
-        divImg.style.backgroundImage = url;
+        if (media.image != null) {
+            //Si le media est une image
+            let url = getUrlMedia(media.image);
+            let divMedia = article.getElementsByTagName("DIV")[0];
 
-        section.appendChild(article);
+            divMedia.style.backgroundImage = `url(${url})`;
+
+            section.appendChild(article);
+        } else if (media.video != null) {
+            //Si le media est une Video
+            console.log('UNE VIDEO');
+            let divMedia = article.getElementsByTagName("DIV")[0];
+            let video = document.createElement("VIDEO");
+            let source = document.createElement("SOURCE");
+            let url = getUrlMedia(media.video);
+            source.src = url;
+            source.type = '/video/mp4';
+            video.width = "250";
+            video.controle = true;
+            video.appendChild(source);
+
+
+            divMedia.appendChild(video);
+            console.log(video);
+            section.appendChild(article);
+
+        }
+
     }
 }
 
-function getUrlImage(media) {
+function getUrlMedia(media) {
     let fileName = currentPhotographe.name.split(' ');
-    return ` url("../assets/Sample_Photos/${fileName[0]}/${media.image}")`;
 
-
+    return `../assets/Sample_Photos/${fileName[0]}/${media}`;
 }
