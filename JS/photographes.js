@@ -81,7 +81,7 @@ function createPhoto(Listmedia) {
         //Met en place la barre pour les likes 
         divTitreEtLikes = article.getElementsByClassName("TitreEtLikes")[0];
         let counterEtLikes = document.createElement("DIV");
-        counterEtLikes.innerHTML = "<p>" + media.likes + "</p>" + "<img src='../assets/heart-solid.svg' width='20'></img>";
+        counterEtLikes.innerHTML = "<p>" + media.likes + "</p>" + "<img src='../assets/logos/heart-solid.svg' width='20'></img>";
         //Sur click cela incremente le nombre de Likes
         counterEtLikes.addEventListener("click", function() {
             let newP = counterEtLikes.getElementsByTagName("P")[0];

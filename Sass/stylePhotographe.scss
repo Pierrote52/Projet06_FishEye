@@ -16,10 +16,14 @@
         height: 50ex;
         width: 100%;
         z-index: 2;
-        background-color: green;
         display: none;
         #closeLogo {}
         #corpsPrincipale {
+            #back {
+                position: absolute;
+                width: 30px;
+                top: 30ex;
+            }
             .photo {
                 margin-top: 10ex;
                 margin-right: auto;
@@ -27,10 +31,17 @@
                 border-radius: 10%;
                 width: 90%;
                 height: 60ex;
-                background-color: yellow;
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-position-x: center;
+            }
+            #next {
+                position: absolute;
+                width: 30px;
+                top: 30ex;
+                right: 0px;
+                bottom: auto;
+                transform: rotateZ(180deg);
             }
         }
     }
