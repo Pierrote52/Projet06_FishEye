@@ -60,64 +60,7 @@ function createPhoto(Listmedia) {
 
     for (media of Listmedia) {
         //Cree la structure minimum d'un article.
-        let article = document.createElement("ARTICLE");
-        article.addEventListener('click', function(media) {
-            let oneDiv = article.getElementsByTagName("DIV")[0];
-            let urlLink = oneDiv.style.backgroundImage;
-            let urlPart1 = urlLink.split("(");
-            let urlPart2 = urlPart1[1].split(")");
-            let urlMedia = urlPart2[0];
-            displayLighBox(urlMedia);
-
-        })
-
-
-        article.innerHTML = "<div class=\"image\"></div>" +
-            "<div class = \"TitreEtLikes\">" +
-            "<p>" +
-            media.title +
-            "</p>" +
-            "</div>";
-        //Met en place la barre pour les likes 
-        divTitreEtLikes = article.getElementsByClassName("TitreEtLikes")[0];
-        let counterEtLikes = document.createElement("DIV");
-        counterEtLikes.innerHTML = "<p>" + media.likes + "</p>" + "<img src='../assets/logos/heart-solid.svg' width='20'></img>";
-        //Sur click cela incremente le nombre de Likes
-        counterEtLikes.addEventListener("click", function() {
-            let newP = counterEtLikes.getElementsByTagName("P")[0];
-            let newInt = parseInt(newP.innerHTML) + 1;
-            newP.innerHTML = newInt;
-        })
-        divTitreEtLikes.appendChild(counterEtLikes);
-
-        if (media.image != null) {
-            //Si le media est une image
-            let url = getUrlMedia(media.image);
-            let divMedia = article.getElementsByTagName("DIV")[0];
-
-            divMedia.style.backgroundImage = `url(${url})`;
-
-            section.appendChild(article);
-        } else if (media.video != null) {
-            //Si le media est une Video
-            console.log('UNE VIDEO');
-            let divMedia = article.getElementsByTagName("DIV")[0];
-            let video = document.createElement("VIDEO");
-            let source = document.createElement("SOURCE");
-            let url = getUrlMedia(media.video);
-            source.src = url;
-            source.type = '/video/mp4';
-            video.width = "250";
-            video.controle = true;
-            video.appendChild(source);
-
-
-            divMedia.appendChild(video);
-            console.log(video);
-            section.appendChild(article);
-
-        }
-
+        createArticle(media);
     }
 }
 
@@ -127,11 +70,84 @@ function getUrlMedia(media) {
     return `../assets/Sample_Photos/${fileName[0]}/${media}`;
 }
 
-function displayLighBox(url) {
+function createArticle(media) {
+    let article = document.createElement("ARTICLE");
+    article.innerHTML = "<div class=\"image\"></div>" +
+        "<div class = \"TitreEtLikes\">" +
+        "<p>" +
+        media.title +
+        "</p>" +
+        "<div><p>" + media.likes + "</p><img src='../assets/logos/heart-solid.svg' width='20'></div>" +
+        "</div>";
+    //Recupere la div des likes et logo heart. 
+    let counterEtLikes = article.getElementsByTagName("DIV")[2];
+    //S'Occupe de l'incrémentation des likes sur la page. 
+    counterEtLikes.addEventListener("click", function() {
+        let newP = counterEtLikes.getElementsByTagName("P")[0];
+        let newInt = parseInt(newP.innerHTML) + 1;
+        newP.innerHTML = newInt;
+    })
+    let img = article.getElementsByTagName("DIV")[0];
+    img.addEventListener("click", function() {
+            displayLighBoxByIndex(listMedia.indexOf(media));
+        })
+        //Check s'il s'agit d'une video ou d'une image. 
+    if (media.image != null) {
+        //Si le media est une image
+        let url = getUrlMedia(media.image);
+        let divMedia = article.getElementsByTagName("DIV")[0];
+
+        divMedia.style.backgroundImage = `url(${url})`;
+
+        section.appendChild(article);
+    } else if (media.video != null) {
+        //Si le media est une Video
+        console.log('UNE VIDEO');
+    }
+}
+//Display la lignBox par index.
+function displayLighBoxByIndex(indexOfMedia) {
     let corpPrincipale = document.getElementById('corpsPrincipale');
     corpPrincipale.style.display = "none";
     let lightBox = document.getElementById("lightBox");
     lightBox.style.display = "block";
     let photo = lightBox.getElementsByClassName("photo")[0];
+    let url = getUrlMedia(listMedia[indexOfMedia].image);
     photo.style.backgroundImage = `url(${url})`;
+
+    //Gere le click sur le chevron back. 
+    let back = document.getElementById("back");
+
+    back.addEventListener('click', function() {
+        if (indexOfMedia > 0) {
+            indexOfMedia -= 1;
+            let url = getUrlMedia(listMedia[indexOfMedia].image);
+            console.log(indexOfMedia);
+            photo.style.backgroundImage = `url(${url})`;
+        }
+
+    });
+    let next = document.getElementById("next");
+    next.addEventListener('click', function() {
+        if (indexOfMedia <= listMedia.length - 2) {
+            console.log("INDEX OF MEDI-- " + indexOfMedia + "  LENGHT MEDIA -- " + listMedia.length)
+            indexOfMedia += 1;
+            let url = getUrlMedia(listMedia[indexOfMedia].image);
+            console.log(indexOfMedia);
+            photo.style.backgroundImage = `url(${url})`;
+        }
+
+    });
+
+    let close = document.getElementById('closeLogo');
+    close.addEventListener('click', function() {
+        //Souci cela creer trop d'elements. A refaire. 
+
+        let corpPrincipale = document.getElementById('corpsPrincipale');
+        corpPrincipale.style.display = "block";
+        let lightBox = document.getElementById("lightBox");
+        lightBox.style.display = "none";
+
+    })
+
 }

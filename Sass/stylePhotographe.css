@@ -31,6 +31,13 @@ body {
   display: none;
 }
 
+#lightBox #closeLogo {
+  position: absolute;
+  width: 40px;
+  top: -5ex;
+  right: 0px;
+}
+
 #lightBox #corpsPrincipale #back {
   position: absolute;
   width: 30px;
