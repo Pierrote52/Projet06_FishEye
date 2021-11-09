@@ -16,6 +16,33 @@ img {
 
 body {
   position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+#lightBox {
+  margin-top: 17ex;
+  height: 50ex;
+  width: 100%;
+  z-index: 2;
+  background-color: green;
+  display: none;
+}
+
+#lightBox #corpsPrincipale .photo {
+  margin-top: 10ex;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 10%;
+  width: 90%;
+  height: 60ex;
+  background-color: yellow;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: center;
 }
 
 h1 {
@@ -105,11 +132,25 @@ article .TitreEtLikes {
 }
 
 article .TitreEtLikes p {
+  color: #901C1C;
   font-family: "DMSansSmall";
   font-size: 19px;
+}
+
+article .TitreEtLikes div {
   color: #901C1C;
-  margin-top: 3%;
-  margin-left: 1%;
-  margin-bottom: 3%;
+  font-family: "DMSansSmall";
+  font-size: 19px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+article .TitreEtLikes div img {
+  margin-bottom: 5px;
+  width: 16px;
 }
 /*# sourceMappingURL=stylePhotographe.css.map */

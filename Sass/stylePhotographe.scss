@@ -7,6 +7,32 @@
     
     body {
         position: relative;
+        justify-content: center;
+        align-content: center;
+    }
+    
+    #lightBox {
+        margin-top: 17ex;
+        height: 50ex;
+        width: 100%;
+        z-index: 2;
+        background-color: green;
+        display: none;
+        #closeLogo {}
+        #corpsPrincipale {
+            .photo {
+                margin-top: 10ex;
+                margin-right: auto;
+                margin-left: auto;
+                border-radius: 10%;
+                width: 90%;
+                height: 60ex;
+                background-color: yellow;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position-x: center;
+            }
+        }
     }
     
     h1 {
@@ -83,12 +109,21 @@
             display: flex;
             justify-content: space-between;
             p {
+                color: $colorPrimary;
                 font-family: $fontPrincipalSmall;
                 font-size: 19px;
+            }
+            div {
                 color: $colorPrimary;
-                margin-top: 3%;
-                margin-left: 1%;
-                margin-bottom: 3%;
+                font-family: $fontPrincipalSmall;
+                font-size: 19px;
+                display: flex;
+                align-items: center;
+                p {}
+                img {
+                    margin-bottom: 5px;
+                    width: 16px;
+                }
             }
         }
     }

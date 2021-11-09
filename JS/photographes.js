@@ -28,7 +28,7 @@ function displayPhotographeInfo(photographe) {
     let name = document.getElementsByTagName("H1")[0];
     let localistion = document.getElementsByTagName("H2")[0];
     let slogan = document.getElementsByTagName("H3")[0];
-    let photoProfil = document.getElementsByTagName("DIV")[0];
+    let photoProfil = document.getElementsByTagName("DIV")[1];
     let ulFiltres = document.getElementsByTagName("UL")[0];
     //Assigner ls variables.
     name.innerHTML = photographe.name;
@@ -53,32 +53,42 @@ function filtrePhotos(data) {
     createPhoto(listMedia, data.photographers);
 }
 
+
+//Creer une vignette. 
 function createPhoto(Listmedia) {
 
 
     for (media of Listmedia) {
-        //Cree la structure minimum d'un article
+        //Cree la structure minimum d'un article.
         let article = document.createElement("ARTICLE");
+        article.addEventListener('click', function(media) {
+            let oneDiv = article.getElementsByTagName("DIV")[0];
+            let urlLink = oneDiv.style.backgroundImage;
+            let urlPart1 = urlLink.split("(");
+            let urlPart2 = urlPart1[1].split(")");
+            let urlMedia = urlPart2[0];
+            displayLighBox(urlMedia);
+
+        })
+
+
         article.innerHTML = "<div class=\"image\"></div>" +
             "<div class = \"TitreEtLikes\">" +
             "<p>" +
             media.title +
             "</p>" +
-
-            "</div>" +
-            "</article>";
-
-
+            "</div>";
         //Met en place la barre pour les likes 
         divTitreEtLikes = article.getElementsByClassName("TitreEtLikes")[0];
-        let newP = document.createElement("P");
-        newP.innerHTML = media.likes;
+        let counterEtLikes = document.createElement("DIV");
+        counterEtLikes.innerHTML = "<p>" + media.likes + "</p>" + "<img src='../assets/heart-solid.svg' width='20'></img>";
         //Sur click cela incremente le nombre de Likes
-        newP.addEventListener("click", function() {
+        counterEtLikes.addEventListener("click", function() {
+            let newP = counterEtLikes.getElementsByTagName("P")[0];
             let newInt = parseInt(newP.innerHTML) + 1;
             newP.innerHTML = newInt;
         })
-        divTitreEtLikes.appendChild(newP);
+        divTitreEtLikes.appendChild(counterEtLikes);
 
         if (media.image != null) {
             //Si le media est une image
@@ -115,4 +125,13 @@ function getUrlMedia(media) {
     let fileName = currentPhotographe.name.split(' ');
 
     return `../assets/Sample_Photos/${fileName[0]}/${media}`;
+}
+
+function displayLighBox(url) {
+    let corpPrincipale = document.getElementById('corpsPrincipale');
+    corpPrincipale.style.display = "none";
+    let lightBox = document.getElementById("lightBox");
+    lightBox.style.display = "block";
+    let photo = lightBox.getElementsByClassName("photo")[0];
+    photo.style.backgroundImage = `url(${url})`;
 }
