@@ -67,7 +67,8 @@ function createPhoto(Listmedia) {
 function getUrlMedia(media) {
     let fileName = currentPhotographe.name.split(' ');
 
-    return `../assets/Sample_Photos/${fileName[0]}/${media}`;
+
+    return `https://github.com/Pierrote52/Projet06_FishEye/blob/master/assets/Sample_Photos/${fileName[0]}/${media}`;
 }
 
 function createArticle(media) {
