@@ -24,6 +24,7 @@ body {
       align-content: center;
   margin-left: 0px;
   margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 #lightBox {
@@ -51,7 +52,7 @@ body {
   margin-top: 10ex;
   margin-right: auto;
   margin-left: auto;
-  border-radius: 10%;
+  border-radius: 5%;
   width: 90%;
   height: 60ex;
   background-size: cover;
@@ -210,7 +211,7 @@ body {
   background-color: #D3573C;
   width: 100%;
   margin-top: 0%;
-  height: auto;
+  margin-bottom: 0%;
   padding-top: 5ex;
 }
 

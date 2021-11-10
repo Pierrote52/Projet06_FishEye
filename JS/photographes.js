@@ -3,10 +3,6 @@ let currentPhotographe;
 let section = document.getElementsByTagName("SECTION")[0];
 let listMedia = [];
 
-
-console.log(idPhotographe);
-
-
 const data = async() => {
     return await fetch('https://raw.githubusercontent.com/Pierrote52/Projet06_FishEye/master/JSON.json').then((v) => { return v.json() });
 }
@@ -122,7 +118,7 @@ function displayLighBoxByIndex(indexOfMedia) {
         if (indexOfMedia > 0) {
             indexOfMedia -= 1;
             let url = getUrlMedia(listMedia[indexOfMedia].image);
-            console.log(indexOfMedia);
+
             photo.style.backgroundImage = `url(${url})`;
         }
 
@@ -130,10 +126,8 @@ function displayLighBoxByIndex(indexOfMedia) {
     let next = document.getElementById("next");
     next.addEventListener('click', function() {
         if (indexOfMedia <= listMedia.length - 2) {
-            console.log("INDEX OF MEDI-- " + indexOfMedia + "  LENGHT MEDIA -- " + listMedia.length)
             indexOfMedia += 1;
             let url = getUrlMedia(listMedia[indexOfMedia].image);
-            console.log(indexOfMedia);
             photo.style.backgroundImage = `url(${url})`;
         }
 
@@ -164,7 +158,6 @@ function displayFormContact() {
     let form = document.getElementById('formulaire');
     form.style.display = "block";
 }
-
 //Ferme le formulaire. 
 let closeForm = document.getElementById('closeForm');
 closeForm.addEventListener('click', function() {
@@ -172,5 +165,4 @@ closeForm.addEventListener('click', function() {
     pagePhotos.style.display = "block";
     let form = document.getElementById('formulaire');
     form.style.display = "none";
-
 });
