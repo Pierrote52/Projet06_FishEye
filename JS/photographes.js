@@ -67,8 +67,6 @@ function createPhoto(Listmedia) {
 function getUrlMedia(media) {
     let fileName = currentPhotographe.name.split(' ');
 
-
-
     return `../assets/Sample_Photos/${fileName[0]}/${media}`;
 }
 
@@ -153,3 +151,26 @@ function displayLighBoxByIndex(indexOfMedia) {
     })
 
 }
+
+//Ouvre le formulaire. 
+let oppenForm = document.getElementById('btn-ContactezMoi');
+oppenForm.addEventListener('click', function() {
+    displayFormContact();
+});
+
+function displayFormContact() {
+    let pagePhotos = document.getElementById('corpsPrincipale');
+    pagePhotos.style.display = "none";
+    let form = document.getElementById('formulaire');
+    form.style.display = "block";
+}
+
+//Ferme le formulaire. 
+let closeForm = document.getElementById('closeForm');
+closeForm.addEventListener('click', function() {
+    let pagePhotos = document.getElementById('corpsPrincipale');
+    pagePhotos.style.display = "block";
+    let form = document.getElementById('formulaire');
+    form.style.display = "none";
+
+});

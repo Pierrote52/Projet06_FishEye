@@ -1,15 +1,17 @@
-
 @font-face {
     font-family: 'DMSans';
     src: url("DM_Sans/DMSans-Medium.ttf");
-  }
-  @font-face {
+}
+
+@font-face {
     font-family: 'DMSansSmall';
     src: url("DM_Sans/DMSans-Regular.ttf");
-  }
+}
 
-$colorPrimary : #901C1C;
-$colorOrange : rgb(205,86,63);
-$fontPrincipalbold : "DMSans";
+$colorPrimary: #901C1C;
+$colorSegondary: #D3573C;
+$colorOrange: rgb(205,
+86,
+63);
+$fontPrincipalbold: "DMSans";
 $fontPrincipalSmall :"DMSansSmall";
-
