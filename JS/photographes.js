@@ -6,7 +6,7 @@ let listMedia = [];
 const data = async() => {
     //lien en local = https://raw.githubusercontent.com/Pierrote52/Projet06_FishEye/master/JSON.json
     //lien sur GitHub : https://github.com/Pierrote52/Projet06_FishEye/master/JSON.json
-    return await fetch('https://raw.githubusercontent.com/Pierrote52/Projet06_FishEye/master/JSON.json').then((v) => { return v.json() });
+    return await fetch('https://github.com/Pierrote52/Projet06_FishEye/master/JSON.json').then((v) => { return v.json() });
 }
 
 https: //raw.githubusercontent.com/Pierrote52/Projet06_FishEye/master/JSON.json
