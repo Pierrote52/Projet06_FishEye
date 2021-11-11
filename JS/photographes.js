@@ -67,7 +67,7 @@ function createPhoto(Listmedia) {
 function getUrlMedia(media) {
     let fileName = currentPhotographe.name.split(' ');
 
-    return `../assets/Sample_Photos/${fileName[0]}/${media}`;
+    return `../Projet06_FishEye/assets/Sample_Photos/${fileName[0]}/${media}`;
 }
 
 function createArticle(media) {
@@ -77,7 +77,7 @@ function createArticle(media) {
         "<p>" +
         media.title +
         "</p>" +
-        "<div><p>" + media.likes + "</p><img src='../assets/logos/heart-solid.svg' width='20'></div>" +
+        "<div><p>" + media.likes + "</p><img src='../Projet06_FishEye/assets/logos/heart-solid.svg' width='20'></div>" +
         "</div>";
     //Recupere la div des likes et logo heart. 
     let counterEtLikes = article.getElementsByTagName("DIV")[2];
