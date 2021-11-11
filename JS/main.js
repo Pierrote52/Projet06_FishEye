@@ -27,7 +27,7 @@ function showProducts(data) {
             }
             section.appendChild(article);
             var _photoDiv = document.getElementById(`${product["photographers"][i].portrait}`);
-            _photoDiv.style.backgroundImage = `url("https://github.com/Pierrote52/Projet06_FishEye/master/assets/Sample_Photos/profils/${product["photographers"][i].portrait}")`;
+            _photoDiv.style.backgroundImage = `url("https://raw.githubusercontent.com/Pierrote52/Projet06_FishEye/master/assets/Sample_Photos/profils/${product["photographers"][i].portrait}")`;
             let Ul = article.getElementsByTagName("UL");
         }
         // _photoDiv.style.backgroundImage = "../assets/Sample_Photos/profils/Mimi.jpg";
