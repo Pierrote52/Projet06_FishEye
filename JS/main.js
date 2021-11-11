@@ -3,7 +3,7 @@ const data = async() => {
 
     //lien en local = https://raw.githubusercontent.com/Pierrote52/Projet06_FishEye/master/JSON.json
     //lien sur GitHub : https://github.com/Pierrote52/Projet06_FishEye/master/JSON.json
-    return await fetch('https://github.com/Pierrote52/Projet06_FishEye/master/JSON.json').then((v) => { return v.json() }).then(v => { return [v] });
+    return await fetch('https://raw.githubusercontent.com/Pierrote52/Projet06_FishEye/master/JSON.json').then((v) => { return v.json() }).then(v => { return [v] });
 }
 data().then(v => showProducts(v))
     //---------J'AFFICHE TOUS LES PRODUITS---------
@@ -27,7 +27,7 @@ function showProducts(data) {
             }
             section.appendChild(article);
             var _photoDiv = document.getElementById(`${product["photographers"][i].portrait}`);
-            _photoDiv.style.backgroundImage = `url("../assets/Sample_Photos/profils/${product["photographers"][i].portrait}")`;
+            _photoDiv.style.backgroundImage = `url("https://github.com/Pierrote52/Projet06_FishEye/master/assets/Sample_Photos/profils/${product["photographers"][i].portrait}")`;
             let Ul = article.getElementsByTagName("UL");
         }
         // _photoDiv.style.backgroundImage = "../assets/Sample_Photos/profils/Mimi.jpg";
