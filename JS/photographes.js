@@ -34,7 +34,7 @@ function displayPhotographeInfo(photographe) {
     name.innerHTML = photographe.name;
     localistion.innerHTML = `${photographe.city}, ${photographe.country}`;
     slogan.innerHTML = photographe.tagline;
-    photoProfil.style.backgroundImage = `url('../assets/Sample_Photos/profils/${photographe.portrait}')`;
+    photoProfil.style.backgroundImage = `url('../Projet06_FishEye/assets/Sample_Photos/profils/${photographe.portrait}')`;
     for (tag of photographe.tags) {
         li = document.createElement("LI");
         li.innerHTML = `<p>#${tag}<p>`;
