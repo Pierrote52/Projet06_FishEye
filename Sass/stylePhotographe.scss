@@ -1,235 +1,239 @@
     @import "Ui.scss";
-    img {
-        margin-top: 10%;
-        margin-left: 5%;
-        width: 50%;
-    }
-    
-    body {
-        width: 100%;
-        position: relative;
-        justify-content: center;
-        align-content: center;
-        margin-left: 0px;
-        margin-top: 0px;
-        margin-bottom: 0px;
-    }
-    
-    #lightBox {
-        margin-top: 17ex;
-        height: 50ex;
-        width: 100%;
-        z-index: 2;
-        display: none;
-        #closeLogo {
-            position: absolute;
-            width: 40px;
-            top: -5ex;
-            right: 0px;
+    @media (max-width: 450px) {
+        img {
+            margin-top: 10%;
+            margin-left: 5%;
+            width: 50%;
         }
-        #corpsPrincipale {
-            #back {
-                position: absolute;
-                width: 30px;
-                top: 30ex;
-            }
-            .photo {
-                margin-top: 10ex;
-                margin-right: auto;
-                margin-left: auto;
-                border-radius: 5%;
-                width: 90%;
-                height: 60ex;
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position-x: center;
-            }
-            #next {
-                position: absolute;
-                width: 30px;
-                top: 30ex;
-                right: 0px;
-                bottom: auto;
-                transform: rotateZ(180deg);
-            }
-        }
-    }
-    
-    #corpsPrincipale {
-        display: block;
-        h1 {
-            margin-right: 30%;
-            margin-left: 3%;
-            font-family: $fontPrincipalSmall;
-            color: $colorOrange;
-            font-size: 6ex;
+        body {
+            width: 100%;
+            position: relative;
+            justify-content: center;
+            align-content: center;
+            margin-left: 0px;
+            margin-top: 0px;
             margin-bottom: 0px;
         }
-        h2 {
-            margin-top: 0px;
-            margin-left: 3%;
-            font-family: $fontPrincipalSmall;
-            color: $colorPrimary;
-            font-size: 2.5ex;
-            margin-bottom: 1ex;
+        #lightBox {
+            margin-top: 17ex;
+            height: 50ex;
+            width: 100%;
+            z-index: 2;
+            display: none;
+            #closeLogo {
+                position: absolute;
+                width: 40px;
+                top: -5ex;
+                right: 0px;
+            }
+            #corpsPrincipale {
+                #back {
+                    position: absolute;
+                    width: 30px;
+                    top: 30ex;
+                }
+                .photo {
+                    margin-top: 10ex;
+                    margin-right: auto;
+                    margin-left: auto;
+                    border-radius: 5%;
+                    width: 90%;
+                    height: 60ex;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position-x: center;
+                }
+                #next {
+                    position: absolute;
+                    width: 30px;
+                    top: 30ex;
+                    right: 0px;
+                    bottom: auto;
+                    transform: rotateZ(180deg);
+                }
+            }
         }
-        h3 {
-            margin-top: 0px;
-            margin-left: 3%;
-            font-family: $fontPrincipalSmall;
-            color: grey;
-            font-size: 2ex;
-        }
-        #photoProfil {
-            top: 15ex;
-            right: 1ex;
-            position: absolute;
-            width: 15ex;
-            height: 15ex;
-            background-image: url("../assets/Sample_Photos/profils/MimiKeel.jpg");
-            background-position: center;
-            background-size: 27ex;
-            border-radius: 100%;
-        }
-        ul {
-            display: flex;
-            width: 90%;
-            li {
-                font-size: 2ex;
-                list-style-type: none;
-                border-style: solid;
-                border-width: 1px;
-                border-color: gray;
-                border-radius: 30px;
-                margin-right: 2%;
-                font-family: $fontPrincipalbold;
+        #corpsPrincipale {
+            display: block;
+            h1 {
+                margin-right: 30%;
+                margin-left: 3%;
+                font-family: $fontPrincipalSmall;
+                color: $colorOrange;
+                font-size: 6ex;
+                margin-bottom: 0px;
+            }
+            h2 {
+                margin-top: 0px;
+                margin-left: 3%;
+                font-family: $fontPrincipalSmall;
                 color: $colorPrimary;
+                font-size: 2.5ex;
+                margin-bottom: 1ex;
+            }
+            h3 {
+                margin-top: 0px;
+                margin-left: 3%;
+                font-family: $fontPrincipalSmall;
+                color: grey;
+                font-size: 2ex;
+            }
+            #photoProfil {
+                top: 15ex;
+                right: 1ex;
+                position: absolute;
+                width: 15ex;
+                height: 15ex;
+                background-image: url("../assets/Sample_Photos/profils/MimiKeel.jpg");
+                background-position: center;
+                background-size: 27ex;
+                border-radius: 100%;
+            }
+            ul {
+                display: flex;
+                width: 90%;
+                li {
+                    font-size: 2ex;
+                    list-style-type: none;
+                    border-style: solid;
+                    border-width: 1px;
+                    border-color: gray;
+                    border-radius: 30px;
+                    margin-right: 2%;
+                    font-family: $fontPrincipalbold;
+                    color: $colorPrimary;
+                    p {
+                        margin-top: 0%;
+                        margin-bottom: 0%;
+                        margin-right: 5px;
+                        margin-left: 5px;
+                    }
+                }
+            }
+            article {
+                width: 95%;
+                margin-left: auto;
+                margin-right: auto;
+                .image {
+                    border-radius: 20px;
+                    width: 100%;
+                    height: 40ex;
+                    border-radius: 10%;
+                    background-position: 50% 40%;
+                    background-size: 160%;
+                }
+                .TitreEtLikes {
+                    display: flex;
+                    justify-content: space-between;
+                    p {
+                        color: $colorPrimary;
+                        font-family: $fontPrincipalSmall;
+                        font-size: 19px;
+                    }
+                    div {
+                        color: $colorPrimary;
+                        font-family: $fontPrincipalSmall;
+                        font-size: 19px;
+                        display: flex;
+                        align-items: center;
+                        p {}
+                        img {
+                            margin-bottom: 5px;
+                            width: 16px;
+                        }
+                    }
+                }
+            }
+            #btn-ContactezMoi {
+                position: fixed;
+                bottom: 5%;
+                left: 33%;
+                z-index: 5;
+                margin-left: auto;
+                margin-right: auto;
+                height: 5ex;
+                width: 20ex;
+                background-color: $colorPrimary;
+                border-radius: 10px;
                 p {
-                    margin-top: 0%;
-                    margin-bottom: 0%;
-                    margin-right: 5px;
-                    margin-left: 5px;
+                    color: blanchedalmond;
+                    font-family: $fontPrincipalbold;
+                    padding-left: 2.0ex;
+                    font-size: 2.2ex;
+                    margin-top: 1ex;
                 }
             }
         }
-        article {
-            width: 95%;
-            margin-left: auto;
-            margin-right: auto;
-            .image {
-                border-radius: 20px;
-                width: 100%;
-                height: 40ex;
-                border-radius: 10%;
-                background-position: 50% 40%;
-                background-size: 160%;
+        #formulaire {
+            display: none;
+            background-color: $colorSegondary;
+            width: 100%;
+            margin-top: 0%;
+            margin-bottom: 0%;
+            padding-top: 5ex;
+            img {
+                position: absolute;
+                right: 3ex;
+                color: whitesmoke;
+                top: 0ex;
+                width: 3ex;
+                filter: invert(1);
             }
-            .TitreEtLikes {
+            h3 {
+                margin-left: 2ex;
+                font-family: $fontPrincipalbold;
+                font-size: xx-large;
+            }
+            form {
                 display: flex;
-                justify-content: space-between;
-                p {
-                    color: $colorPrimary;
+                flex-direction: column;
+                justify-content: center;
+                label {
+                    font-size: 20px;
                     font-family: $fontPrincipalSmall;
-                    font-size: 19px;
+                    margin-left: 2ex;
                 }
-                div {
-                    color: $colorPrimary;
-                    font-family: $fontPrincipalSmall;
-                    font-size: 19px;
-                    display: flex;
-                    align-items: center;
-                    p {}
-                    img {
-                        margin-bottom: 5px;
-                        width: 16px;
+                input {
+                    width: 90%;
+                    height: 6ex;
+                    margin-right: auto;
+                    margin-left: auto;
+                    border-radius: 10px;
+                    border-width: 0px;
+                }
+                textarea {
+                    width: 90%;
+                    margin-right: auto;
+                    margin-left: auto;
+                    border-radius: 10px;
+                    font-size: 20px;
+                    border-width: 0px;
+                }
+                button {
+                    margin-top: 10ex;
+                    width: 50%;
+                    margin-right: auto;
+                    margin-left: auto;
+                    background-color: $colorPrimary;
+                    border-radius: 5px;
+                    border-width: 0px;
+                    margin-bottom: 10ex;
+                    padding-top: 1ex;
+                    padding-bottom: 1ex;
+                    p {
+                        margin-top: 0px;
+                        margin-bottom: 0px;
+                        font-family: $fontPrincipalbold;
+                        font-size: 20px;
+                        color: cornsilk;
                     }
                 }
             }
         }
-        #btn-ContactezMoi {
-            position: fixed;
-            bottom: 5%;
-            left: 33%;
-            z-index: 5;
-            margin-left: auto;
-            margin-right: auto;
-            height: 5ex;
-            width: 20ex;
-            background-color: $colorPrimary;
-            border-radius: 10px;
-            p {
-                color: blanchedalmond;
-                font-family: $fontPrincipalbold;
-                padding-left: 2.0ex;
-                font-size: 2.2ex;
-                margin-top: 1ex;
-            }
-        }
     }
     
-    #formulaire {
-        display: none;
-        background-color: $colorSegondary;
-        width: 100%;
-        margin-top: 0%;
-        margin-bottom: 0%;
-        padding-top: 5ex;
-        img {
-            position: absolute;
-            right: 3ex;
-            color: whitesmoke;
-            top: 0ex;
-            width: 3ex;
-            filter: invert(1);
-        }
-        h3 {
-            margin-left: 2ex;
-            font-family: $fontPrincipalbold;
-            font-size: xx-large;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            label {
-                font-size: 20px;
-                font-family: $fontPrincipalSmall;
-                margin-left: 2ex;
-            }
-            input {
-                width: 90%;
-                height: 6ex;
-                margin-right: auto;
-                margin-left: auto;
-                border-radius: 10px;
-                border-width: 0px;
-            }
-            textarea {
-                width: 90%;
-                margin-right: auto;
-                margin-left: auto;
-                border-radius: 10px;
-                font-size: 20px;
-                border-width: 0px;
-            }
-            button {
-                margin-top: 10ex;
-                width: 50%;
-                margin-right: auto;
-                margin-left: auto;
-                background-color: $colorPrimary;
-                border-radius: 5px;
-                border-width: 0px;
-                margin-bottom: 10ex;
-                padding-top: 1ex;
-                padding-bottom: 1ex;
-                p {
-                    margin-top: 0px;
-                    margin-bottom: 0px;
-                    font-family: $fontPrincipalbold;
-                    font-size: 20px;
-                    color: cornsilk;
-                }
-            }
+    @media(min-width: 450px) {
+        #corpsPrincipale {
+            header {}
         }
     }

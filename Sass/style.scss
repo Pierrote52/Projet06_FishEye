@@ -1,101 +1,108 @@
 @import "Ui.scss";
 @import "custom.scss";
-
-header {
-    z-index: 2;
-    overflow:hidden;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    img{
-        padding-top: 5%;
-        padding-left: 5%;
-        width: 40%;
+@media(max-width: 450px) {
+    header {
+        z-index: 2;
+        overflow: hidden;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        img {
+            padding-top: 5%;
+            padding-left: 5%;
+            width: 40%;
+        }
     }
-  }
-  a{
-      text-decoration: none;
-  }
+    a {
+        text-decoration: none;
+    }
+    main {
+        position: relative;
+        width: 100%;
+        height: auto;
+        h1 {
+            padding-top: 8%;
+            margin-right: 0%;
+            font-size: 100%;
+            text-align: end;
+            font-family: $fontPrincipalbold;
+            color: $colorPrimary;
+        }
+        section {
+            margin-top: 15ex;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-direction: column;
+            article {
+                width: 100%;
+                text-align: center;
+                div {
+                    height: 53ex;
+                    width: 100%;
+                    background-color: yellow;
+                    background-image: none;
+                    margin-left: auto;
+                    margin-right: auto;
+                    border-radius: 50%;
+                    background-position: 50% 40%;
+                    background-size: 160%;
+                }
+                h2 {
+                    margin-top: 5%;
+                    margin-bottom: 0%;
+                    font-family: $fontPrincipalSmall;
+                    font-size: 3em;
+                    color: $colorPrimary;
+                }
+                h3 {
+                    margin-top: 0%;
+                    margin-bottom: 0%;
+                    font-size: 1.3em;
+                    color: $colorPrimary;
+                    font-family: $fontPrincipalSmall;
+                }
+                h4 {
+                    margin-bottom: 0%;
+                    margin-top: 0%;
+                    font-size: 0.9em;
+                    color: black;
+                    font-family: $fontPrincipalSmall;
+                }
+                p {
+                    margin-bottom: 0%;
+                    margin-top: 0%;
+                    font-size: 1.0em;
+                    color: grey;
+                    font-family: $fontPrincipalSmall;
+                }
+                ul {
+                    justify-content: center;
+                    display: flex;
+                }
+            }
+        }
+    }
+}
 
-  main{
-      position: relative;
-      width: 100%;
-      height: auto;
-      h1{
-          padding-top: 8%;
-          margin-right: 0%;
-          font-size: 100%;
-          text-align: end;
-
-          font-family: $fontPrincipalbold;
-          color: $colorPrimary;
-
-      }
-      section{
-        margin-top: 15ex;
-        margin-left: auto;
-              margin-right: auto;
-              display: flex;
-              flex-direction: column;
-          article{
-              width: 100%;
-              text-align: center;
-              div{
-                  height: 53ex;
-                  width: 100%;
-                  background-color: yellow;
-                  background-image: none;
-                  margin-left: auto;
-              margin-right: auto;
-              border-radius: 50%;
-              background-position: 50% 40%;
-              background-size: 160%;
-
-              }
-              h2{
-                  margin-top: 5%;
-                  margin-bottom: 0%;
-                  font-family: $fontPrincipalSmall;
-                  font-size: 3em;
-                  color: $colorPrimary;
-
-              }
-              h3{
-                  margin-top: 0%;
-                  margin-bottom: 0%;
-                  font-size: 1.3em;
-                  color: $colorPrimary;
-                  font-family: $fontPrincipalSmall;
-              }
-              h4{
-                margin-bottom: 0%;
-
-                margin-top: 0%;
-                font-size: 0.9em;
-                color: black;
-                font-family: $fontPrincipalSmall;
-
-              }
-              p{
-
-                margin-bottom: 0%;
-
-                margin-top: 0%;
-                font-size: 1.0em;
-                color: grey;
-                font-family: $fontPrincipalSmall;
-
-              }
-              
-                  ul{
-                      justify-content: center;
-                      display: flex;
-                  }
-              
-
-
-          }
-      }
-
-      
-  }
+@media(min-width:450px) {
+    header {
+        display: flex;
+        img {
+            margin-top: 5ex;
+            margin-left: 5ex;
+            height: 9ex;
+        }
+        nav {
+            width: 90%;
+            ul {
+                justify-content: none;
+                margin-top: none;
+                li {
+                    padding: 0.5% 1% 0.5% 1%;
+                    font-size: 20%;
+                }
+            }
+        }
+    }
+}

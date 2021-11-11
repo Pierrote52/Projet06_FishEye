@@ -166,3 +166,16 @@ closeForm.addEventListener('click', function() {
     let form = document.getElementById('formulaire');
     form.style.display = "none";
 });
+
+//Envoie des infos dans le formulaire. 
+let btnEnvoyer = document.getElementById('envoyer');
+btnEnvoyer.addEventListener('click', function(event) {
+    let champs = [];
+    event.preventDefault();
+    let prenom = champs.push(document.getElementById('fprenom').value);
+    let nom = champs.push(document.getElementById('lnom').value);
+    let email = champs.push(document.getElementById('lemail').value);
+    let message = champs.push(document.getElementById('lmessage').value);
+    console.log(champs);
+
+})

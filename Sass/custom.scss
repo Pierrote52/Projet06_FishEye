@@ -1,14 +1,12 @@
 @import "Ui.scss";
-
-
-ul{
+ul {
     display: flex;
     flex-direction: row;
     font-size: xxx-large;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 10%;
-    li{
+    li {
         font-size: 25%;
         list-style-type: none;
         border-style: solid;
@@ -20,9 +18,8 @@ ul{
         margin-bottom: 2%;
         font-family: $fontPrincipalbold;
         color: $colorPrimary;
-        
     }
-    .clicked{
+    .clicked {
         font-size: 25%;
         list-style-type: none;
         border-style: solid;
@@ -35,5 +32,4 @@ ul{
         background-color: $colorPrimary;
         color: blanchedalmond;
     }
-
 }
