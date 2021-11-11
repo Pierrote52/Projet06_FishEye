@@ -4,9 +4,11 @@ let section = document.getElementsByTagName("SECTION")[0];
 let listMedia = [];
 
 const data = async() => {
-    return await fetch('https://raw.githubusercontent.com/Pierrote52/Projet06_FishEye/master/JSON.json').then((v) => { return v.json() });
+    return await fetch('https://github.com/Pierrote52/Projet06_FishEye/master/JSON.json').then((v) => { return v.json() });
 }
-data().then(v => takeCurrentPhotographe(v));
+
+https: //raw.githubusercontent.com/Pierrote52/Projet06_FishEye/master/JSON.json
+    data().then(v => takeCurrentPhotographe(v));
 
 
 function takeCurrentPhotographe(data) {
