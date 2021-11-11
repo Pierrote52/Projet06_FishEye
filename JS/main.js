@@ -13,7 +13,11 @@ function showProducts(data) {
         for (let i = 0; i < product.photographers.length; i++) {
 
             const itemCard = document.getElementById('items');
-            var articleContent = `<a href = "../photographe.html?id=${product["photographers"][i].id}"><div id ="${product["photographers"][i].portrait}"></div><h2>${product["photographers"][i].name}</h2><h3>${product["photographers"][i].city}</h3><h4>${product["photographers"][i].tagline}</h4><p>${product["photographers"][i].price}€/jour</p><ul></ul></a>`
+
+            //local ../photographe.html?id=${product["photographers"][i].id};
+            // Projet06_FishEye
+
+            var articleContent = `<a href = "../Projet06_FishEye/photographe.html?id=${product["photographers"][i].id}"><div id ="${product["photographers"][i].portrait}"></div><h2>${product["photographers"][i].name}</h2><h3>${product["photographers"][i].city}</h3><h4>${product["photographers"][i].tagline}</h4><p>${product["photographers"][i].price}€/jour</p><ul></ul></a>`
 
             var article = document.createElement("ARTICLE");
             article.innerHTML = articleContent;
