@@ -2,7 +2,7 @@ var section = document.getElementsByTagName("SECTION")[0];
 
 //Ici nous allons implementer une variable qui va gerer si nous sommes en Local ou sur GitHub. 
 // Cette variable doit etre egale à "/Projet06_FishEye/master/" si nous sommes sur GitHub, sinon en Local ce sera "" un champVide.
-let linkHelperLocalVsGitHub = "/Projet06_FishEye/master/"
+let linkHelperLocalVsGitHub = "/Projet06_FishEye/master"
 
 const data = async() => {
 
@@ -36,7 +36,7 @@ function showProducts(data) {
             }
             section.appendChild(article);
             var _photoDiv = document.getElementById(`${product["photographers"][i].portrait}`);
-            _photoDiv.style.backgroundImage = `url("../master/assets/Sample_Photos/profils/${product["photographers"][i].portrait}")`;
+            _photoDiv.style.backgroundImage = `url("..${linkHelperLocalVsGitHub}/assets/Sample_Photos/profils/${product["photographers"][i].portrait}")`;
             let Ul = article.getElementsByTagName("UL");
         }
         // _photoDiv.style.backgroundImage = "../assets/Sample_Photos/profils/Mimi.jpg";
