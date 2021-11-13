@@ -1,8 +1,8 @@
 var section = document.getElementsByTagName("SECTION")[0];
 
 //Ici nous allons implementer une variable qui va gerer si nous sommes en Local ou sur GitHub. 
-// Cette variable doit etre egale à "https://pierrote52.github.io/Projet06_FishEye/master/" si nous sommes sur GitHub, sinon en Local ce sera "./" un champVide.
-let linkHelperLocalVsGitHub = "/Projet06_FishEye"
+// Cette variable doit etre egale à "/Projet06_FishEye" si nous sommes sur GitHub, sinon en Local ce sera "." un champVide.
+let linkHelperLocalVsGitHub = "."
 
 const data = async() => {
 
@@ -16,15 +16,8 @@ data().then(v => showProducts(v))
 function showProducts(data) {
     for (product of data) {
         for (let i = 0; i < product.photographers.length; i++) {
-
-            const itemCard = document.getElementById('items');
-
-            //local ../photographe.html?id=${product["photographers"][i].id};
-            // Projet06_FishEye
-
-            var articleContent = `<a href = "${linkHelperLocalVsGitHub}/photographe.html?id=${product["photographers"][i].id}"><div id ="${product["photographers"][i].portrait}"></div><h2>${product["photographers"][i].name}</h2><h3>${product["photographers"][i].city}</h3><h4>${product["photographers"][i].tagline}</h4><p>${product["photographers"][i].price}€/jour</p><ul></ul></a>`
-
             var article = document.createElement("ARTICLE");
+            var articleContent = `<a href = "${linkHelperLocalVsGitHub}/photographe.html?id=${product["photographers"][i].id}"><div id ="${product["photographers"][i].portrait}"></div><h2>${product["photographers"][i].name}</h2><h3>${product["photographers"][i].city}</h3><h4>${product["photographers"][i].tagline}</h4><p>${product["photographers"][i].price}€/jour</p><ul></ul></a>`
             article.innerHTML = articleContent;
             let ul = article.getElementsByTagName("UL")[0];
             //Je vais creer les Tags pour mes Photographes.
