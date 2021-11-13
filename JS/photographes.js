@@ -7,6 +7,7 @@ let listMedia = [];
 // Cette variable doit etre egale à "https://pierrote52.github.io/Projet06_FishEye/master/" si nous sommes sur GitHub, sinon en Local ce sera "../" un champVide.
 let linkHelperLocalVsGitHub = "/Projet06_FishEye/master/"
 
+
 const data = async() => {
     //lien en local = https://raw.githubusercontent.com/Pierrote52/Projet06_FishEye/master/JSON.json
     //lien sur GitHub : https://github.com/Pierrote52/Projet06_FishEye/master/JSON.json
