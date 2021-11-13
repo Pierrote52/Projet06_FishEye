@@ -4,7 +4,7 @@ let section = document.getElementsByTagName("SECTION")[0];
 let listMedia = [];
 
 //Ici nous allons implementer une variable qui va gerer si nous sommes en Local ou sur GitHub. 
-// Cette variable doit etre egale à "/Projet06_FishEye/master/" si nous sommes sur GitHub, sinon en Local ce sera "" un champVide.
+// Cette variable doit etre egale à "https://pierrote52.github.io/Projet06_FishEye/master/" si nous sommes sur GitHub, sinon en Local ce sera "../" un champVide.
 let linkHelperLocalVsGitHub = "/Projet06_FishEye/master/"
 
 const data = async() => {
@@ -38,7 +38,7 @@ function displayPhotographeInfo(photographe) {
     name.innerHTML = photographe.name;
     localistion.innerHTML = `${photographe.city}, ${photographe.country}`;
     slogan.innerHTML = photographe.tagline;
-    photoProfil.style.backgroundImage = `url('..${linkHelperLocalVsGitHub}/assets/Sample_Photos/profils/${photographe.portrait}')`;
+    photoProfil.style.backgroundImage = `url('${linkHelperLocalVsGitHub}/assets/Sample_Photos/profils/${photographe.portrait}')`;
     for (tag of photographe.tags) {
         li = document.createElement("LI");
         li.innerHTML = `<p>#${tag}<p>`;
@@ -71,10 +71,7 @@ function createPhoto(Listmedia) {
 function getUrlMedia(media) {
     let fileName = currentPhotographe.name.split(' ');
 
-    //Local : ../assets/ect...
-    //GitHub: https://raw.githubusercontent.com/Pierrote52/Projet06_FishEye/master/
-
-    return `..${linkHelperLocalVsGitHub}/assets/Sample_Photos/${fileName[0]}/${media}`;
+    return `${linkHelperLocalVsGitHub}/assets/Sample_Photos/${fileName[0]}/${media}`;
 }
 
 function createArticle(media) {
@@ -84,7 +81,7 @@ function createArticle(media) {
         "<p>" +
         media.title +
         "</p>" +
-        "<div><p>" + media.likes + `</p><img src='..${linkHelperLocalVsGitHub}/assets/logos/heart-solid.svg' width='20'></div>` +
+        "<div><p>" + media.likes + `</p><img src='${linkHelperLocalVsGitHub}/assets/logos/heart-solid.svg' width='20'></div>` +
         "</div>";
     //Recupere la div des likes et logo heart. 
     let counterEtLikes = article.getElementsByTagName("DIV")[2];
