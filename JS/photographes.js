@@ -125,11 +125,8 @@ function createPhoto(media) {
     })
     let url = getUrlMedia(media.image);
     let divMedia = article.getElementsByTagName("DIV")[0];
-
     divMedia.style.backgroundImage = `url(${url})`;
-
     section.appendChild(article);
-
 }
 //Display la lignBox par index.
 function displayLighBoxByIndex(indexOfMedia) {
@@ -144,39 +141,30 @@ function displayLighBoxByIndex(indexOfMedia) {
     if (listMedia[indexOfMedia].image != null) {
         media = lightBox.getElementsByClassName("photo")[0];
         let url = getUrlMedia(listMedia[indexOfMedia].image);
+        media.innerHTML = "";
         media.style.backgroundImage = `url(${url})`;
     } else if (listMedia[indexOfMedia].video != null) {
         media = lightBox.getElementsByClassName("photo")[0];
         let url = getUrlMedia(listMedia[indexOfMedia].video);
-        // media.style.backgroundImage = "none";
-        let video = `<video controls src="${url}" width="100%"></video>`;
+        media.style.backgroundImage = "none";
+        let video = `<video controls src="${url}"></video>`;
         media.innerHTML = video;
-
-
     }
-
-
-
     //Gere le click sur le chevron back. 
     let back = document.getElementById("back");
 
     back.addEventListener('click', function() {
         if (indexOfMedia > 0) {
             indexOfMedia -= 1;
-            console.log(indexOfMedia);
             displayLightBoxMedia(listMedia[indexOfMedia]);
         }
-
     });
     let next = document.getElementById("next");
     next.addEventListener('click', function() {
         if (indexOfMedia <= listMedia.length - 2) {
             indexOfMedia += 1;
-            console.log(indexOfMedia);
             displayLightBoxMedia(listMedia[indexOfMedia]);
-
         }
-
     });
 
     function displayLightBoxMedia(nouveauMedia) {
@@ -184,12 +172,9 @@ function displayLighBoxByIndex(indexOfMedia) {
             let url = getUrlMedia(listMedia[indexOfMedia].image);
             media.innerHTML = "";
             media.style.backgroundImage = `url(${url})`;
-
         } else if (nouveauMedia.video != null) {
             let url = getUrlMedia(listMedia[indexOfMedia].video);
-            console.log(url);
             media.style.backgroundImage = "none"
-
             let video = `<video controls src="${url}" width="100%"></video>`;
             media.innerHTML = video;
         }
