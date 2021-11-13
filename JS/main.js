@@ -2,13 +2,13 @@ var section = document.getElementsByTagName("SECTION")[0];
 
 //Ici nous allons implementer une variable qui va gerer si nous sommes en Local ou sur GitHub. 
 // Cette variable doit etre egale à "https://pierrote52.github.io/Projet06_FishEye/master/" si nous sommes sur GitHub, sinon en Local ce sera "../" un champVide.
-let linkHelperLocalVsGitHub = "https://pierrote52.github.io/Projet06_FishEye/master/"
+let linkHelperLocalVsGitHub = "https://pierrote52.github.io/Projet06_FishEye/"
 
 const data = async() => {
 
     //lien en local = https://raw.githubusercontent.com/Pierrote52/Projet06_FishEye/master/JSON.json
     //lien sur GitHub : https://github.com/Pierrote52/Projet06_FishEye/master/JSON.json
-    return await fetch('https://github.com/Pierrote52/Projet06_FishEye/master/JSON.json').then((v) => { return v.json() }).then(v => { return [v] });
+    return await fetch('https://raw.githubusercontent.com/Pierrote52/Projet06_FishEye/master/JSON.json').then((v) => { return v.json() }).then(v => { return [v] });
 }
 data().then(v => showProducts(v))
     //---------J'AFFICHE TOUS LES PRODUITS---------
