@@ -1,8 +1,8 @@
 var section = document.getElementsByTagName("SECTION")[0];
 
 //Ici nous allons implementer une variable qui va gerer si nous sommes en Local ou sur GitHub. 
-// Cette variable doit etre egale à "/Projet06_FishEye/master/" si nous sommes sur GitHub, sinon en Local ce sera "" un champVide.
-let linkHelperLocalVsGitHub = "/Projet06_FishEye/master"
+// Cette variable doit etre egale à "https://pierrote52.github.io/Projet06_FishEye/master/" si nous sommes sur GitHub, sinon en Local ce sera "../" un champVide.
+let linkHelperLocalVsGitHub = "https://pierrote52.github.io/Projet06_FishEye/master/"
 
 const data = async() => {
 
