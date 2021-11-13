@@ -3,10 +3,14 @@ let currentPhotographe;
 let section = document.getElementsByTagName("SECTION")[0];
 let listMedia = [];
 
+//Ici nous allons implementer une variable qui va gerer si nous sommes en Local ou sur GitHub. 
+// Cette variable doit etre egale à "/Projet06_FishEye" si nous sommes sur GitHub, sinon en Local ce sera "" un champVide.
+let linkHelperLocalVsGitHub = ""
+
 const data = async() => {
     //lien en local = https://raw.githubusercontent.com/Pierrote52/Projet06_FishEye/master/JSON.json
     //lien sur GitHub : https://github.com/Pierrote52/Projet06_FishEye/master/JSON.json
-    return await fetch('https://github.com/Pierrote52/Projet06_FishEye/master/JSON.json').then((v) => { return v.json() });
+    return await fetch('https://raw.githubusercontent.com/Pierrote52/Projet06_FishEye/master/JSON.json').then((v) => { return v.json() });
 }
 
 https: //raw.githubusercontent.com/Pierrote52/Projet06_FishEye/master/JSON.json
@@ -34,7 +38,7 @@ function displayPhotographeInfo(photographe) {
     name.innerHTML = photographe.name;
     localistion.innerHTML = `${photographe.city}, ${photographe.country}`;
     slogan.innerHTML = photographe.tagline;
-    photoProfil.style.backgroundImage = `url('../Projet06_FishEye/assets/Sample_Photos/profils/${photographe.portrait}')`;
+    photoProfil.style.backgroundImage = `url('..${linkHelperLocalVsGitHub}/assets/Sample_Photos/profils/${photographe.portrait}')`;
     for (tag of photographe.tags) {
         li = document.createElement("LI");
         li.innerHTML = `<p>#${tag}<p>`;
@@ -67,7 +71,10 @@ function createPhoto(Listmedia) {
 function getUrlMedia(media) {
     let fileName = currentPhotographe.name.split(' ');
 
-    return `../Projet06_FishEye/assets/Sample_Photos/${fileName[0]}/${media}`;
+    //Local : ../assets/ect...
+    //GitHub: https://raw.githubusercontent.com/Pierrote52/Projet06_FishEye/master/
+
+    return `..${linkHelperLocalVsGitHub}/assets/Sample_Photos/${fileName[0]}/${media}`;
 }
 
 function createArticle(media) {
@@ -77,7 +84,7 @@ function createArticle(media) {
         "<p>" +
         media.title +
         "</p>" +
-        "<div><p>" + media.likes + "</p><img src='../Projet06_FishEye/assets/logos/heart-solid.svg' width='20'></div>" +
+        "<div><p>" + media.likes + `</p><img src='..${linkHelperLocalVsGitHub}/assets/logos/heart-solid.svg' width='20'></div>` +
         "</div>";
     //Recupere la div des likes et logo heart. 
     let counterEtLikes = article.getElementsByTagName("DIV")[2];

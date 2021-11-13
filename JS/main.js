@@ -1,4 +1,9 @@
 var section = document.getElementsByTagName("SECTION")[0];
+
+//Ici nous allons implementer une variable qui va gerer si nous sommes en Local ou sur GitHub. 
+// Cette variable doit etre egale à "/Projet06_FishEye/master/" si nous sommes sur GitHub, sinon en Local ce sera "" un champVide.
+let linkHelperLocalVsGitHub = ""
+
 const data = async() => {
 
     //lien en local = https://raw.githubusercontent.com/Pierrote52/Projet06_FishEye/master/JSON.json
@@ -17,7 +22,7 @@ function showProducts(data) {
             //local ../photographe.html?id=${product["photographers"][i].id};
             // Projet06_FishEye
 
-            var articleContent = `<a href = "../Projet06_FishEye/photographe.html?id=${product["photographers"][i].id}"><div id ="${product["photographers"][i].portrait}"></div><h2>${product["photographers"][i].name}</h2><h3>${product["photographers"][i].city}</h3><h4>${product["photographers"][i].tagline}</h4><p>${product["photographers"][i].price}€/jour</p><ul></ul></a>`
+            var articleContent = `<a href = "..${linkHelperLocalVsGitHub}/photographe.html?id=${product["photographers"][i].id}"><div id ="${product["photographers"][i].portrait}"></div><h2>${product["photographers"][i].name}</h2><h3>${product["photographers"][i].city}</h3><h4>${product["photographers"][i].tagline}</h4><p>${product["photographers"][i].price}€/jour</p><ul></ul></a>`
 
             var article = document.createElement("ARTICLE");
             article.innerHTML = articleContent;
@@ -31,7 +36,7 @@ function showProducts(data) {
             }
             section.appendChild(article);
             var _photoDiv = document.getElementById(`${product["photographers"][i].portrait}`);
-            _photoDiv.style.backgroundImage = `url("https://raw.githubusercontent.com/Pierrote52/Projet06_FishEye/master/assets/Sample_Photos/profils/${product["photographers"][i].portrait}")`;
+            _photoDiv.style.backgroundImage = `url("../master/assets/Sample_Photos/profils/${product["photographers"][i].portrait}")`;
             let Ul = article.getElementsByTagName("UL");
         }
         // _photoDiv.style.backgroundImage = "../assets/Sample_Photos/profils/Mimi.jpg";
