@@ -55,17 +55,17 @@ function filtrePhotos(data) {
             listMedia.push(media);
         }
     }
-    createPhoto(listMedia, data.photographers);
+    createVignette(listMedia, data.photographers);
 }
-
-
 //Creer une vignette. 
-function createPhoto(Listmedia) {
-
-
+function createVignette(Listmedia) {
     for (media of Listmedia) {
-        //Cree la structure minimum d'un article.
-        createArticle(media);
+        if (media.image != null) {
+            createPhoto(media);
+        } else {
+            createVideo(media);
+        }
+
     }
 }
 
@@ -75,7 +75,34 @@ function getUrlMedia(media) {
     return `${linkHelperLocalVsGitHub}/assets/Sample_Photos/${fileName[0]}/${media}`;
 }
 
-function createArticle(media) {
+function createVideo(media) {
+    let urlVideo = getUrlMedia(media.video);
+    let article = document.createElement("ARTICLE");
+    article.innerHTML = `<video src= "${urlVideo}" width="100px"></video>` +
+        "<div class = \"TitreEtLikes\">" +
+        "<p>" +
+        media.title +
+        "</p>" +
+        "<div><p>" + media.likes + `</p><img src='${linkHelperLocalVsGitHub}/assets/logos/heart-solid.svg' width='20'></div>` +
+        "</div>";
+    //Recupere la div des likes et logo heart. 
+    let counterEtLikes = article.getElementsByTagName("DIV")[1];
+    //S'Occupe de l'incrémentation des likes sur la page. 
+    counterEtLikes.addEventListener("click", function() {
+        let newP = counterEtLikes.getElementsByTagName("P")[0];
+        let newInt = parseInt(newP.innerHTML) + 1;
+        newP.innerHTML = newInt;
+    })
+    let video = article.getElementsByTagName("video")[0];
+    video.addEventListener('click', function() {
+        displayLighBoxByIndex(listMedia.indexOf(media));
+    })
+
+
+    section.appendChild(article);
+}
+
+function createPhoto(media) {
     let article = document.createElement("ARTICLE");
     article.innerHTML = "<div class=\"image\"></div>" +
         "<div class = \"TitreEtLikes\">" +
@@ -94,31 +121,41 @@ function createArticle(media) {
     })
     let img = article.getElementsByTagName("DIV")[0];
     img.addEventListener("click", function() {
-            displayLighBoxByIndex(listMedia.indexOf(media));
-        })
-        //Check s'il s'agit d'une video ou d'une image. 
-    if (media.image != null) {
-        //Si le media est une image
-        let url = getUrlMedia(media.image);
-        let divMedia = article.getElementsByTagName("DIV")[0];
+        displayLighBoxByIndex(listMedia.indexOf(media));
+    })
+    let url = getUrlMedia(media.image);
+    let divMedia = article.getElementsByTagName("DIV")[0];
 
-        divMedia.style.backgroundImage = `url(${url})`;
+    divMedia.style.backgroundImage = `url(${url})`;
 
-        section.appendChild(article);
-    } else if (media.video != null) {
-        //Si le media est une Video
-        console.log('UNE VIDEO');
-    }
+    section.appendChild(article);
+
 }
 //Display la lignBox par index.
 function displayLighBoxByIndex(indexOfMedia) {
+    //Affiche la LighBox
     let corpPrincipale = document.getElementById('corpsPrincipale');
     corpPrincipale.style.display = "none";
     let lightBox = document.getElementById("lightBox");
     lightBox.style.display = "block";
-    let photo = lightBox.getElementsByClassName("photo")[0];
-    let url = getUrlMedia(listMedia[indexOfMedia].image);
-    photo.style.backgroundImage = `url(${url})`;
+    let media;
+
+    //Gere s'il s'agit d'une photo ou bien une video. 
+    if (listMedia[indexOfMedia].image != null) {
+        media = lightBox.getElementsByClassName("photo")[0];
+        let url = getUrlMedia(listMedia[indexOfMedia].image);
+        media.style.backgroundImage = `url(${url})`;
+    } else if (listMedia[indexOfMedia].video != null) {
+        media = lightBox.getElementsByClassName("photo")[0];
+        let url = getUrlMedia(listMedia[indexOfMedia].video);
+        // media.style.backgroundImage = "none";
+        let video = `<video controls src="${url}" width="100%"></video>`;
+        media.innerHTML = video;
+
+
+    }
+
+
 
     //Gere le click sur le chevron back. 
     let back = document.getElementById("back");
@@ -126,9 +163,8 @@ function displayLighBoxByIndex(indexOfMedia) {
     back.addEventListener('click', function() {
         if (indexOfMedia > 0) {
             indexOfMedia -= 1;
-            let url = getUrlMedia(listMedia[indexOfMedia].image);
-
-            photo.style.backgroundImage = `url(${url})`;
+            console.log(indexOfMedia);
+            displayLightBoxMedia(listMedia[indexOfMedia]);
         }
 
     });
@@ -136,11 +172,29 @@ function displayLighBoxByIndex(indexOfMedia) {
     next.addEventListener('click', function() {
         if (indexOfMedia <= listMedia.length - 2) {
             indexOfMedia += 1;
-            let url = getUrlMedia(listMedia[indexOfMedia].image);
-            photo.style.backgroundImage = `url(${url})`;
+            console.log(indexOfMedia);
+            displayLightBoxMedia(listMedia[indexOfMedia]);
+
         }
 
     });
+
+    function displayLightBoxMedia(nouveauMedia) {
+        if (nouveauMedia.image != null) {
+            let url = getUrlMedia(listMedia[indexOfMedia].image);
+            media.innerHTML = "";
+            media.style.backgroundImage = `url(${url})`;
+
+        } else if (nouveauMedia.video != null) {
+            let url = getUrlMedia(listMedia[indexOfMedia].video);
+            console.log(url);
+            media.style.backgroundImage = "none"
+
+            let video = `<video controls src="${url}" width="100%"></video>`;
+            media.innerHTML = video;
+        }
+
+    }
 
     let close = document.getElementById('closeLogo');
     close.addEventListener('click', function() {

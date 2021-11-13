@@ -137,6 +137,12 @@
     background-position: 50% 40%;
     background-size: 160%;
   }
+  #corpsPrincipale article video {
+    border-radius: 20px;
+    width: 100%;
+    height: 40ex;
+    border-radius: 10%;
+  }
   #corpsPrincipale article .TitreEtLikes {
     display: -webkit-box;
     display: -ms-flexbox;
