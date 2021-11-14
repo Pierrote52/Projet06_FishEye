@@ -305,7 +305,7 @@
                     height: 15%;
                     background-color: aqua;
                     right: 10%;
-                    top: 16%;
+                    top: 13%;
                     border-radius: 50%;
                     background-size: cover;
                 }
@@ -320,6 +320,26 @@
                         font-family: $fontPrincipalSmall;
                         font-size: 2ex;
                         color: beige;
+                    }
+                }
+            }
+            section {
+                display: flex;
+                flex-wrap: wrap;
+                article {
+                    margin-left: 5%;
+                    margin-right: 5%;
+                    .image {
+                        width: 10ex;
+                        height: 10ex;
+                        border-radius: 5%;
+                        background-size: cover;
+                    }
+                    .TitreEtLikes {
+                        display: flex;
+                        font-size: 3ex;
+                        color: $colorPrimary;
+                        font-family: $fontPrincipalSmall;
                     }
                 }
             }
