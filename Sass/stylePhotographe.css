@@ -26,49 +26,6 @@
     margin-top: 0px;
     margin-bottom: 0px;
   }
-  #lightBox {
-    margin-top: 17ex;
-    height: 50ex;
-    width: 100%;
-    z-index: 2;
-    display: none;
-  }
-  #lightBox #closeLogo {
-    position: absolute;
-    width: 40px;
-    top: -5ex;
-    right: 0px;
-  }
-  #lightBox #media #back {
-    position: absolute;
-    width: 30px;
-    top: 30ex;
-  }
-  #lightBox #media .photo {
-    margin-top: 10ex;
-    margin-right: auto;
-    margin-left: auto;
-    border-radius: 5%;
-    width: 90%;
-    height: 60ex;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position-x: center;
-    overflow: hidden;
-  }
-  #lightBox #media .photo video {
-    margin-top: 40%;
-    width: 100%;
-  }
-  #lightBox #media #next {
-    position: absolute;
-    width: 30px;
-    top: 30ex;
-    right: 0px;
-    bottom: auto;
-    -webkit-transform: rotateZ(180deg);
-            transform: rotateZ(180deg);
-  }
   #corpsPrincipale {
     display: block;
   }
@@ -129,20 +86,29 @@
     margin-right: 5px;
     margin-left: 5px;
   }
+  #corpsPrincipale nav {
+    display: none;
+  }
   #corpsPrincipale article {
     width: 95%;
     margin-left: auto;
     margin-right: auto;
   }
   #corpsPrincipale article .image {
+    position: relative;
     border-radius: 20px;
     width: 100%;
     height: 40ex;
     border-radius: 10%;
     background-position: 50% 40%;
     background-size: 160%;
+    overflow: hidden;
   }
   #corpsPrincipale article video {
+    position: absolute;
+    height: 100%;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
     border-radius: 20px;
     width: 100%;
     border-radius: 10%;
@@ -193,6 +159,49 @@
     padding-left: 2.0ex;
     font-size: 2.2ex;
     margin-top: 1ex;
+  }
+  #lightBox {
+    margin-top: 17ex;
+    height: 50ex;
+    width: 100%;
+    z-index: 2;
+    display: none;
+  }
+  #lightBox #closeLogo {
+    position: absolute;
+    width: 40px;
+    top: -5ex;
+    right: 0px;
+  }
+  #lightBox #media #back {
+    position: absolute;
+    width: 30px;
+    top: 30ex;
+  }
+  #lightBox #media .photo {
+    margin-top: 10ex;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 5%;
+    width: 90%;
+    height: 60ex;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    overflow: hidden;
+  }
+  #lightBox #media .photo video {
+    margin-top: 40%;
+    width: 100%;
+  }
+  #lightBox #media #next {
+    position: absolute;
+    width: 30px;
+    top: 30ex;
+    right: 0px;
+    bottom: auto;
+    -webkit-transform: rotateZ(180deg);
+            transform: rotateZ(180deg);
   }
   #formulaire {
     display: none;
@@ -271,6 +280,15 @@
 }
 
 @media (min-width: 450px) {
+  body {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1324px;
+    min-width: 1249px;
+  }
+  #corpsPrincipale {
+    display: block;
+  }
   #corpsPrincipale header {
     margin-bottom: 2%;
   }
@@ -280,8 +298,9 @@
     width: 15%;
   }
   #corpsPrincipale #vignettePhotographe {
+    position: relative;
     width: 100%;
-    background-color: pink;
+    background-color: 1;
   }
   #corpsPrincipale #vignettePhotographe h1,
   #corpsPrincipale #vignettePhotographe h2,
@@ -295,6 +314,7 @@
     font-size: 5ex;
     color: #cd563f;
     font-family: "DMSansSmall";
+    width: 40%;
   }
   #corpsPrincipale #vignettePhotographe h2 {
     color: #901C1C;
@@ -329,19 +349,19 @@
   }
   #corpsPrincipale #vignettePhotographe #photoProfil {
     position: absolute;
-    width: 15%;
-    height: 15%;
+    width: 30ex;
+    height: 30ex;
     background-color: aqua;
     right: 10%;
-    top: 13%;
+    top: 5%;
     border-radius: 50%;
     background-size: cover;
   }
   #corpsPrincipale #vignettePhotographe #btn-ContactezMoi {
-    top: 15%;
+    top: 30%;
     left: 45%;
     position: absolute;
-    padding: 0 1ex 0 1ex;
+    padding: 0 2ex 0 2ex;
     background-color: #901C1C;
     border-radius: 5%;
   }
@@ -350,7 +370,73 @@
     font-size: 2ex;
     color: beige;
   }
+  #corpsPrincipale nav {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: 5%;
+    font-family: "DMSansSmall";
+    font-size: 3ex;
+  }
+  #corpsPrincipale nav h2 {
+    margin-right: 2%;
+  }
+  #corpsPrincipale nav ul {
+    z-index: 2;
+    position: absolute;
+    margin-left: 15%;
+    top: 0%;
+    list-style: none;
+    background-color: #901C1C;
+    padding: 2% 3% 1% 1%;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    border-radius: 10px;
+  }
+  #corpsPrincipale nav ul #selectedLi {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #corpsPrincipale nav ul li {
+    display: none;
+    margin-bottom: 5%;
+    color: white;
+    margin-right: 20%;
+  }
+  #corpsPrincipale nav ul li p {
+    margin: 0%;
+    margin-right: 3%;
+  }
+  #corpsPrincipale nav ul li img {
+    margin-left: 20%;
+    width: 1.5ex;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    -webkit-filter: invert(100%);
+            filter: invert(100%);
+  }
+  #corpsPrincipale nav ul .line {
+    display: none;
+    width: 120%;
+    height: 2px;
+    margin-top: 3%;
+    margin-bottom: 2%;
+    background-color: white;
+  }
+  #corpsPrincipale nav ul:hover li {
+    display: block;
+  }
+  #corpsPrincipale nav ul:hover .line {
+    display: block;
+  }
   #corpsPrincipale section {
+    margin-top: 5%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -362,18 +448,94 @@
     margin-right: 5%;
   }
   #corpsPrincipale section article .image {
-    width: 10ex;
-    height: 10ex;
+    position: relative;
+    width: 40ex;
+    height: 40ex;
     border-radius: 5%;
     background-size: cover;
+    overflow: hidden;
+  }
+  #corpsPrincipale section article .image video {
+    position: absolute;
+    height: 100%;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
   }
   #corpsPrincipale section article .TitreEtLikes {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
     font-size: 3ex;
     color: #901C1C;
     font-family: "DMSansSmall";
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  #corpsPrincipale section article .TitreEtLikes div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  #corpsPrincipale section article .TitreEtLikes div p {
+    margin-left: 10%;
+  }
+  #lightBox {
+    display: none;
+    position: relative;
+    padding-top: 5%;
+  }
+  #lightBox #closeLogo {
+    position: absolute;
+    width: 4%;
+    color: #901C1C;
+    right: 0px;
+  }
+  #lightBox #media {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 150ex;
+  }
+  #lightBox #media #back {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 5%;
+  }
+  #lightBox #media #back img {
+    width: 5ex;
+  }
+  #lightBox #media .photo {
+    position: relative;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 90%;
+    -webkit-box-shadow: 5px 5px 10px grey;
+            box-shadow: 5px 5px 10px grey;
+    overflow: hidden;
+  }
+  #lightBox #media .photo video {
+    position: absolute;
+    position: center;
+  }
+  #lightBox #media #next {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 5%;
+  }
+  #lightBox #media #next img {
+    width: 5ex;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  #formulaire {
+    display: none;
   }
 }
 /*# sourceMappingURL=stylePhotographe.css.map */

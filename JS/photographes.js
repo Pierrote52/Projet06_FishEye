@@ -79,7 +79,7 @@ function getUrlMedia(media) {
 function createVideo(media) {
     let urlVideo = getUrlMedia(media.video);
     let article = document.createElement("ARTICLE");
-    article.innerHTML = `<video src= "${urlVideo}" width="100px"></video>` +
+    article.innerHTML = `<div class= "image"><video src= "${urlVideo}" ></video></div>` +
         "<div class = \"TitreEtLikes\">" +
         "<p>" +
         media.title +
@@ -87,7 +87,7 @@ function createVideo(media) {
         "<div><p>" + media.likes + `</p><img src='${linkHelperLocalVsGitHub}/assets/logos/heart-solid.svg' width='20'></div>` +
         "</div>";
     //Recupere la div des likes et logo heart. 
-    let counterEtLikes = article.getElementsByTagName("DIV")[1];
+    let counterEtLikes = article.getElementsByTagName("DIV")[2];
     //S'Occupe de l'incrémentation des likes sur la page. 
     counterEtLikes.addEventListener("click", function() {
         let newP = counterEtLikes.getElementsByTagName("P")[0];
