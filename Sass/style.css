@@ -225,6 +225,7 @@ ul .clicked {
     margin-right: auto;
   }
   #passerAuContenu {
+    display: none;
     width: auto;
     background-color: red;
     text-align: center;

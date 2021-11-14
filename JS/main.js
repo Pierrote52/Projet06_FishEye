@@ -1,5 +1,20 @@
 var section = document.getElementsByTagName("SECTION")[0];
 
+let mediaQueryList = window.matchMedia('(min-width: 450px')
+let passer = document.getElementById('passerAuContenu');
+
+if (mediaQueryList.matches) {
+    window.onscroll = function() {
+        passer.style.display = "block";
+    }
+}
+let aPass = document.getElementsByTagName('a')[0];
+aPass.addEventListener('click', function() {
+    passer.style.display = "none";
+})
+
+
+
 //Ici nous allons implementer une variable qui va gerer si nous sommes en Local ou sur GitHub. 
 // Cette variable doit etre egale à "/Projet06_FishEye" si nous sommes sur GitHub, sinon en Local ce sera "." un champVide.
 let linkHelperLocalVsGitHub = "."
