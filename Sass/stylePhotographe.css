@@ -271,10 +271,84 @@
 }
 
 @media (min-width: 450px) {
-  img {
+  #corpsPrincipale header {
+    margin-bottom: 2%;
+  }
+  #corpsPrincipale header img {
     margin-top: 2%;
     margin-left: 5%;
     width: 15%;
+  }
+  #corpsPrincipale #vignettePhotographe {
+    width: 100%;
+    background-color: pink;
+  }
+  #corpsPrincipale #vignettePhotographe h1,
+  #corpsPrincipale #vignettePhotographe h2,
+  #corpsPrincipale #vignettePhotographe h3,
+  #corpsPrincipale #vignettePhotographe ul {
+    font-family: "DMSansSmall";
+    padding-left: 5%;
+  }
+  #corpsPrincipale #vignettePhotographe h1 {
+    padding-top: 5%;
+    font-size: 5ex;
+    color: #cd563f;
+    font-family: "DMSansSmall";
+  }
+  #corpsPrincipale #vignettePhotographe h2 {
+    color: #901C1C;
+    font-size: 3ex;
+  }
+  #corpsPrincipale #vignettePhotographe h3 {
+    color: grey;
+    font-size: 2ex;
+  }
+  #corpsPrincipale #vignettePhotographe ul {
+    list-style-type: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #corpsPrincipale #vignettePhotographe ul li {
+    font-size: 2ex;
+    list-style-type: none;
+    border-style: solid;
+    border-width: 1px;
+    border-color: gray;
+    border-radius: 30px;
+    margin-right: 2%;
+    font-family: "DMSans";
+    color: #901C1C;
+  }
+  #corpsPrincipale #vignettePhotographe ul li p {
+    margin-top: 0%;
+    margin-bottom: 0%;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+  #corpsPrincipale #vignettePhotographe #photoProfil {
+    position: absolute;
+    width: 15%;
+    height: 15%;
+    background-color: aqua;
+    right: 10%;
+    top: 16%;
+    border-radius: 50%;
+    background-size: cover;
+  }
+  #corpsPrincipale #vignettePhotographe #btn-ContactezMoi {
+    top: 15%;
+    left: 45%;
+    position: absolute;
+    padding: 0 1ex 0 1ex;
+    background-color: #901C1C;
+    border-radius: 5%;
+  }
+  #corpsPrincipale #vignettePhotographe #btn-ContactezMoi p {
+    font-family: "DMSansSmall";
+    font-size: 2ex;
+    color: beige;
   }
 }
 /*# sourceMappingURL=stylePhotographe.css.map */

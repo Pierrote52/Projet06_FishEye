@@ -5,7 +5,7 @@ let listMedia = [];
 
 //Ici nous allons implementer une variable qui va gerer si nous sommes en Local ou sur GitHub. 
 // Cette variable doit etre egale à "/Projet06_FishEye" si nous sommes sur GitHub, sinon en Local ce sera "." .
-let linkHelperLocalVsGitHub = "/Projet06_FishEye"
+let linkHelperLocalVsGitHub = "."
 
 
 const data = async() => {
@@ -30,11 +30,12 @@ function takeCurrentPhotographe(data) {
 
 //Cette fonction va afficher les informations du photographe.
 function displayPhotographeInfo(photographe) {
-    let name = document.getElementsByTagName("H1")[0];
-    let localistion = document.getElementsByTagName("H2")[0];
-    let slogan = document.getElementsByTagName("H3")[0];
-    let photoProfil = document.getElementsByTagName("DIV")[1];
-    let ulFiltres = document.getElementsByTagName("UL")[0];
+    let vignettePhotographe = document.getElementById('vignettePhotographe');
+    let name = vignettePhotographe.getElementsByTagName("H1")[0];
+    let localistion = vignettePhotographe.getElementsByTagName("H2")[0];
+    let slogan = vignettePhotographe.getElementsByTagName("H3")[0];
+    let photoProfil = vignettePhotographe.getElementsByTagName("DIV")[0];
+    let ulFiltres = vignettePhotographe.getElementsByTagName("UL")[0];
     //Assigner ls variables.
     name.innerHTML = photographe.name;
     localistion.innerHTML = `${photographe.city}, ${photographe.country}`;

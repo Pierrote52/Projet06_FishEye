@@ -3,13 +3,26 @@ var section = document.getElementsByTagName("SECTION")[0];
 let mediaQueryList = window.matchMedia('(min-width: 450px')
 let passer = document.getElementById('passerAuContenu');
 
-if (mediaQueryList.matches) {
-    window.onscroll = function() {
-        passer.style.display = "block";
+document.onload = scrollCheck();
+
+function scrollCheck() {
+    if (mediaQueryList.matches) {
+        window.onscroll = function() {
+            if (document.documentElement.scrollTop > 40) {
+                passer.style.display = "block";
+            }
+
+        }
+
     }
 }
-let aPass = document.getElementsByTagName('a')[0];
+
+
+
+
+let aPass = document.getElementById('passerAuContenu');
 aPass.addEventListener('click', function() {
+    document.documentElement.scrollTop = 0;
     passer.style.display = "none";
 })
 
@@ -17,7 +30,7 @@ aPass.addEventListener('click', function() {
 
 //Ici nous allons implementer une variable qui va gerer si nous sommes en Local ou sur GitHub. 
 // Cette variable doit etre egale à "/Projet06_FishEye" si nous sommes sur GitHub, sinon en Local ce sera "." un champVide.
-let linkHelperLocalVsGitHub = "/Projet06_FishEye"
+let linkHelperLocalVsGitHub = "."
 
 const data = async() => {
 

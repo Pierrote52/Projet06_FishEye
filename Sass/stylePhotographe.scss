@@ -243,12 +243,85 @@
     }
     
     @media(min-width: 450px) {
-        img {
-            margin-top: 2%;
-            margin-left: 5%;
-            width: 15%;
-        }
         #corpsPrincipale {
-            header {}
+            header {
+                margin-bottom: 2%;
+                img {
+                    margin-top: 2%;
+                    margin-left: 5%;
+                    width: 15%;
+                }
+            }
+            #vignettePhotographe {
+                width: 100%;
+                background-color: pink;
+                //Met le tout de la vignette 5% a gauche
+                h1,
+                h2,
+                h3,
+                ul {
+                    font-family: $fontPrincipalSmall;
+                    padding-left: 5%;
+                }
+                //Police et formats au cas par cas. 
+                h1 {
+                    padding-top: 5%;
+                    font-size: 5ex;
+                    color: $colorOrange;
+                    font-family: $fontPrincipalSmall;
+                }
+                h2 {
+                    color: $colorPrimary;
+                    font-size: 3ex;
+                }
+                h3 {
+                    color: grey;
+                    font-size: 2ex;
+                }
+                ul {
+                    list-style-type: none;
+                    display: flex;
+                    li {
+                        font-size: 2ex;
+                        list-style-type: none;
+                        border-style: solid;
+                        border-width: 1px;
+                        border-color: gray;
+                        border-radius: 30px;
+                        margin-right: 2%;
+                        font-family: $fontPrincipalbold;
+                        color: $colorPrimary;
+                        p {
+                            margin-top: 0%;
+                            margin-bottom: 0%;
+                            margin-right: 5px;
+                            margin-left: 5px;
+                        }
+                    }
+                }
+                #photoProfil {
+                    position: absolute;
+                    width: 15%;
+                    height: 15%;
+                    background-color: aqua;
+                    right: 10%;
+                    top: 16%;
+                    border-radius: 50%;
+                    background-size: cover;
+                }
+                #btn-ContactezMoi {
+                    top: 15%;
+                    left: 45%;
+                    position: absolute;
+                    padding: 0 1ex 0 1ex;
+                    background-color: $colorPrimary;
+                    border-radius: 5%;
+                    p {
+                        font-family: $fontPrincipalSmall;
+                        font-size: 2ex;
+                        color: beige;
+                    }
+                }
+            }
         }
     }

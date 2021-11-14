@@ -226,7 +226,7 @@ ul .clicked {
   }
   #passerAuContenu {
     display: none;
-    width: auto;
+    width: 100%;
     background-color: red;
     text-align: center;
   }
@@ -241,152 +241,136 @@ ul .clicked {
     text-align: center;
     background-color: #D3573C;
   }
-}
-
-header {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-header #logoFishEye {
-  background-image: url("../assets/logoFishEye.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-top: 5ex;
-  margin-left: 2ex;
-  width: 20%;
-  height: auto;
-  overflow: hidden;
-}
-
-header nav {
-  width: 90%;
-}
-
-header nav ul {
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
-  margin-top: 5%;
-  padding-left: 2%;
-}
-
-header nav ul li {
-  margin-right: 1%;
-  padding: 0.2% 0.5% 0.2% 0.5%;
-  font-size: 30%;
-}
-
-header nav ul .clicked {
-  margin-right: 1%;
-  list-style-type: none;
-  border-style: solid;
-  border-width: 1px;
-  border-color: gray;
-  border-radius: 30px;
-  padding: 0.5% 1% 0.5% 1%;
-  background-color: #901C1C;
-  color: blanchedalmond;
-}
-
-main {
-  width: 100%;
-  position: relative;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-main h1 {
-  font-family: "DMSansSmall";
-  color: #901C1C;
-  position: absolute;
-  top: -9.8ex;
-  left: 74.8%;
-  text-align: end;
-  font-size: 2em;
-  padding-top: 2ex;
-}
-
-main section {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-main section article {
-  text-align: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-right: 5%;
-  margin-left: 5%;
-  margin-bottom: 20%;
-  width: 20%;
-}
-
-main section article a {
-  text-decoration: none;
-}
-
-main section article div {
-  height: 85%;
-  width: 100%;
-  background-color: yellow;
-  background-image: none;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 50%;
-  background-position: 50% 40%;
-  background-size: 160%;
-}
-
-main section article h2 {
-  margin-top: 5%;
-  margin-bottom: 0%;
-  font-family: "DMSansSmall";
-  font-size: 3em;
-  color: #901C1C;
-}
-
-main section article h3 {
-  margin-top: 0%;
-  margin-bottom: 0%;
-  font-size: 1.3em;
-  color: #901C1C;
-  font-family: "DMSansSmall";
-}
-
-main section article h4 {
-  margin-bottom: 0%;
-  margin-top: 0%;
-  font-size: 0.9em;
-  color: black;
-  font-family: "DMSansSmall";
-}
-
-main section article p {
-  margin-bottom: 0%;
-  margin-top: 0%;
-  font-size: 1.0em;
-  color: grey;
-  font-family: "DMSansSmall";
-}
-
-main section article ul {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 0px;
+  header {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  header #logoFishEye {
+    background-image: url("../assets/logoFishEye.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 5ex;
+    margin-left: 2ex;
+    width: 20%;
+    height: auto;
+    overflow: hidden;
+  }
+  header nav {
+    width: 90%;
+  }
+  header nav ul {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    margin-top: 5%;
+    padding-left: 2%;
+  }
+  header nav ul li {
+    margin-right: 1%;
+    padding: 0.2% 0.5% 0.2% 0.5%;
+    font-size: 30%;
+  }
+  header nav ul .clicked {
+    margin-right: 1%;
+    list-style-type: none;
+    border-style: solid;
+    border-width: 1px;
+    border-color: gray;
+    border-radius: 30px;
+    padding: 0.2% 0.5% 0.2% 0.5%;
+    background-color: #901C1C;
+    color: blanchedalmond;
+    font-size: 30%;
+  }
+  main {
+    width: 100%;
+    position: relative;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  main h1 {
+    font-family: "DMSansSmall";
+    color: #901C1C;
+    position: absolute;
+    top: -9.8ex;
+    left: 74.8%;
+    text-align: end;
+    font-size: 2em;
+    padding-top: 2ex;
+  }
+  main section {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  main section article {
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-bottom: 20%;
+    width: 20%;
+  }
+  main section article a {
+    text-decoration: none;
+  }
+  main section article div {
+    height: 85%;
+    width: 100%;
+    background-color: yellow;
+    background-image: none;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    background-position: 50% 40%;
+    background-size: 160%;
+  }
+  main section article h2 {
+    margin-top: 5%;
+    margin-bottom: 0%;
+    font-family: "DMSansSmall";
+    font-size: 3em;
+    color: #901C1C;
+  }
+  main section article h3 {
+    margin-top: 0%;
+    margin-bottom: 0%;
+    font-size: 1.3em;
+    color: #901C1C;
+    font-family: "DMSansSmall";
+  }
+  main section article h4 {
+    margin-bottom: 0%;
+    margin-top: 0%;
+    font-size: 0.9em;
+    color: black;
+    font-family: "DMSansSmall";
+  }
+  main section article p {
+    margin-bottom: 0%;
+    margin-top: 0%;
+    font-size: 1.0em;
+    color: grey;
+    font-family: "DMSansSmall";
+  }
+  main section article ul {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
