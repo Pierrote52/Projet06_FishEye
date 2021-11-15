@@ -19,10 +19,6 @@ function scrollCheck() {
 
     }
 }
-
-
-
-
 let aPass = document.getElementById('passerAuContenu');
 aPass.addEventListener('click', function() {
     document.documentElement.scrollTop = 0;

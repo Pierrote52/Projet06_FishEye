@@ -203,7 +203,7 @@ oppenForm.addEventListener('click', function() {
 
 function displayFormContact() {
     let pagePhotos = document.getElementById('corpsPrincipale');
-    pagePhotos.style.display = "none";
+    pagePhotos.style.opacity = "0.3";
     let form = document.getElementById('formulaire');
     form.style.display = "block";
 }
@@ -211,7 +211,7 @@ function displayFormContact() {
 let closeForm = document.getElementById('closeForm');
 closeForm.addEventListener('click', function() {
     let pagePhotos = document.getElementById('corpsPrincipale');
-    pagePhotos.style.display = "block";
+    pagePhotos.style.opacity = "1";
     let form = document.getElementById('formulaire');
     form.style.display = "none";
 });

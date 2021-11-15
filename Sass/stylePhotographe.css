@@ -363,7 +363,7 @@
     position: absolute;
     padding: 0 2ex 0 2ex;
     background-color: #901C1C;
-    border-radius: 5%;
+    border-radius: 5px;
   }
   #corpsPrincipale #vignettePhotographe #btn-ContactezMoi p {
     font-family: "DMSansSmall";
@@ -467,7 +467,7 @@
     display: flex;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
-    font-size: 3ex;
+    font-size: 2.5ex;
     color: #901C1C;
     font-family: "DMSansSmall";
     -webkit-box-pack: justify;
@@ -482,16 +482,16 @@
         flex-wrap: nowrap;
   }
   #corpsPrincipale section article .TitreEtLikes div p {
-    margin-left: 10%;
+    margin-right: 20%;
   }
   #lightBox {
     display: none;
     position: relative;
-    padding-top: 5%;
+    padding-top: 3%;
   }
   #lightBox #closeLogo {
     position: absolute;
-    width: 4%;
+    width: 2%;
     color: #901C1C;
     right: 0px;
   }
@@ -499,7 +499,7 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    height: 150ex;
+    height: 100ex;
   }
   #lightBox #media #back {
     margin-top: auto;
@@ -513,7 +513,7 @@
     position: relative;
     background-image: none;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-position: center center;
     width: 90%;
     -webkit-box-shadow: 5px 5px 10px grey;
@@ -535,7 +535,66 @@
             transform: rotate(180deg);
   }
   #formulaire {
+    z-index: 5;
     display: none;
+    position: fixed;
+    top: 0%;
+    width: 30%;
+    height: 70%;
+    margin-left: 20%;
+    margin-top: 5%;
+    background-color: #cd563f;
+    padding: 5%;
+    font-family: "DMSansSmall";
+    color: #312E2E;
+    border-radius: 10px;
+  }
+  #formulaire a {
+    position: absolute;
+    right: 10%;
+  }
+  #formulaire a img {
+    width: 3ex;
+  }
+  #formulaire h3 {
+    color: black;
+    font-size: 5ex;
+    margin-bottom: 0%;
+  }
+  #formulaire p {
+    color: black;
+    margin-top: 0%;
+    font-size: 4ex;
+  }
+  #formulaire label {
+    font-size: 3ex;
+  }
+  #formulaire input {
+    width: 100%;
+    height: 5ex;
+    border-style: none;
+    border-radius: 5px;
+  }
+  #formulaire textarea {
+    border-style: none;
+    border-radius: 5px;
+  }
+  #formulaire button {
+    margin-top: 7%;
+    margin-left: 10%;
+    height: 10ex;
+    background-color: #901C1C;
+    border-style: none;
+    border-radius: 5px;
+    width: 30%;
+  }
+  #formulaire button p {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 3ex;
+    color: snow;
   }
 }
 /*# sourceMappingURL=stylePhotographe.css.map */

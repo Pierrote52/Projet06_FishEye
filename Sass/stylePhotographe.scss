@@ -332,7 +332,7 @@
                     position: absolute;
                     padding: 0 2ex 0 2ex;
                     background-color: $colorPrimary;
-                    border-radius: 5%;
+                    border-radius: 5px;
                     p {
                         font-family: $fontPrincipalSmall;
                         font-size: 2ex;
@@ -420,7 +420,7 @@
                     .TitreEtLikes {
                         display: flex;
                         flex-wrap: nowrap;
-                        font-size: 3ex;
+                        font-size: 2.5ex;
                         color: $colorPrimary;
                         font-family: $fontPrincipalSmall;
                         justify-content: space-between;
@@ -428,7 +428,7 @@
                             display: flex;
                             flex-wrap: nowrap;
                             p {
-                                margin-left: 10%;
+                                margin-right: 20%;
                             }
                         }
                     }
@@ -438,16 +438,16 @@
         #lightBox {
             display: none;
             position: relative;
-            padding-top: 5%;
+            padding-top: 3%;
             #closeLogo {
                 position: absolute;
-                width: 4%;
+                width: 2%;
                 color: $colorPrimary;
                 right: 0px
             }
             #media {
                 display: flex;
-                height: 150ex;
+                height: 100ex;
                 #back {
                     margin-top: auto;
                     margin-bottom: auto;
@@ -460,7 +460,7 @@
                     position: relative;
                     background-image: none;
                     background-repeat: no-repeat;
-                    background-size: cover;
+                    background-size: contain;
                     background-position: center center;
                     width: 90%;
                     box-shadow: 5px 5px 10px grey;
@@ -482,6 +482,65 @@
             }
         }
         #formulaire {
+            z-index: 5;
             display: none;
+            position: fixed;
+            top: 0%;
+            width: 30%;
+            height: 70%;
+            margin-left: 20%;
+            margin-top: 5%;
+            background-color: $colorOrange;
+            padding: 5%;
+            font-family: $fontPrincipalSmall;
+            color: #312E2E;
+            border-radius: 10px;
+            a {
+                position: absolute;
+                right: 10%;
+                img {
+                    width: 3ex;
+                }
+            }
+            h3 {
+                color: black;
+                font-size: 5ex;
+                margin-bottom: 0%;
+            }
+            p {
+                color: black;
+                margin-top: 0%;
+                font-size: 4ex;
+            }
+            label {
+                font-size: 3ex;
+            }
+            input {
+                width: 100%;
+                height: 5ex;
+                border-style: none;
+                border-radius: 5px;
+            }
+            textarea {
+                border-style: none;
+                border-radius: 5px;
+            }
+            button {
+                margin-top: 7%;
+                margin-left: 10%;
+                height: 10ex;
+                background-color: $colorPrimary;
+                border-style: none;
+                border-radius: 5px;
+                width: 30%;
+                p {
+                    margin-left: 10%;
+                    margin-right: 10%;
+                    margin-top: auto;
+                    margin-bottom: auto;
+                    font-size: 3ex;
+                    color: snow;
+                }
+            }
         }
     }
