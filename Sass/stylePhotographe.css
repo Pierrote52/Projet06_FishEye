@@ -160,6 +160,9 @@
     font-size: 2.2ex;
     margin-top: 1ex;
   }
+  #corpsPrincipale #compteur_likes_total {
+    display: none;
+  }
   #lightBox {
     margin-top: 17ex;
     height: 50ex;
@@ -280,57 +283,63 @@
 }
 
 @media (min-width: 450px) {
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
   body {
+    position: relative;
+    font-family: "DMSansSmall";
     margin-left: auto;
     margin-right: auto;
     max-width: 1324px;
     min-width: 1249px;
   }
-  #corpsPrincipale {
+  body #corpsPrincipale {
     display: block;
   }
-  #corpsPrincipale header {
+  body #corpsPrincipale header {
     margin-bottom: 2%;
   }
-  #corpsPrincipale header img {
+  body #corpsPrincipale header img {
     margin-top: 2%;
     margin-left: 5%;
     width: 15%;
   }
-  #corpsPrincipale #vignettePhotographe {
+  body #corpsPrincipale #vignettePhotographe {
     position: relative;
     width: 100%;
     background-color: 1;
   }
-  #corpsPrincipale #vignettePhotographe h1,
-  #corpsPrincipale #vignettePhotographe h2,
-  #corpsPrincipale #vignettePhotographe h3,
-  #corpsPrincipale #vignettePhotographe ul {
+  body #corpsPrincipale #vignettePhotographe h1,
+  body #corpsPrincipale #vignettePhotographe h2,
+  body #corpsPrincipale #vignettePhotographe h3,
+  body #corpsPrincipale #vignettePhotographe ul {
     font-family: "DMSansSmall";
     padding-left: 5%;
   }
-  #corpsPrincipale #vignettePhotographe h1 {
+  body #corpsPrincipale #vignettePhotographe h1 {
     padding-top: 5%;
     font-size: 5ex;
     color: #cd563f;
     font-family: "DMSansSmall";
     width: 40%;
   }
-  #corpsPrincipale #vignettePhotographe h2 {
+  body #corpsPrincipale #vignettePhotographe h2 {
     color: #901C1C;
     font-size: 3ex;
   }
-  #corpsPrincipale #vignettePhotographe h3 {
+  body #corpsPrincipale #vignettePhotographe h3 {
     color: grey;
     font-size: 2ex;
   }
-  #corpsPrincipale #vignettePhotographe ul {
+  body #corpsPrincipale #vignettePhotographe ul {
     list-style-type: none;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  #corpsPrincipale #vignettePhotographe ul li {
+  body #corpsPrincipale #vignettePhotographe ul li {
     font-size: 2ex;
     list-style-type: none;
     border-style: solid;
@@ -341,13 +350,13 @@
     font-family: "DMSans";
     color: #901C1C;
   }
-  #corpsPrincipale #vignettePhotographe ul li p {
+  body #corpsPrincipale #vignettePhotographe ul li p {
     margin-top: 0%;
     margin-bottom: 0%;
     margin-right: 5px;
     margin-left: 5px;
   }
-  #corpsPrincipale #vignettePhotographe #photoProfil {
+  body #corpsPrincipale #vignettePhotographe #photoProfil {
     position: absolute;
     width: 30ex;
     height: 30ex;
@@ -357,20 +366,22 @@
     border-radius: 50%;
     background-size: cover;
   }
-  #corpsPrincipale #vignettePhotographe #btn-ContactezMoi {
+  body #corpsPrincipale #vignettePhotographe #btn-ContactezMoi {
     top: 30%;
     left: 45%;
     position: absolute;
     padding: 0 2ex 0 2ex;
     background-color: #901C1C;
     border-radius: 5px;
+    border-width: 0;
+    font-size: inherit;
   }
-  #corpsPrincipale #vignettePhotographe #btn-ContactezMoi p {
+  body #corpsPrincipale #vignettePhotographe #btn-ContactezMoi p {
     font-family: "DMSansSmall";
     font-size: 2ex;
     color: beige;
   }
-  #corpsPrincipale nav {
+  body #corpsPrincipale nav {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -379,10 +390,10 @@
     font-family: "DMSansSmall";
     font-size: 3ex;
   }
-  #corpsPrincipale nav h2 {
+  body #corpsPrincipale nav h2 {
     margin-right: 2%;
   }
-  #corpsPrincipale nav ul {
+  body #corpsPrincipale nav ul {
     z-index: 2;
     position: absolute;
     margin-left: 15%;
@@ -395,22 +406,27 @@
             align-items: flex-start;
     border-radius: 10px;
   }
-  #corpsPrincipale nav ul #selectedLi {
+  body #corpsPrincipale nav ul #selectedLi {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  #corpsPrincipale nav ul li {
+  body #corpsPrincipale nav ul li {
     display: none;
     margin-bottom: 5%;
     color: white;
     margin-right: 20%;
   }
-  #corpsPrincipale nav ul li p {
+  body #corpsPrincipale nav ul li button {
+    border-width: 0;
+    background-color: transparent;
+    font-size: inherit;
+    color: white;
+    outline: none;
     margin: 0%;
     margin-right: 3%;
   }
-  #corpsPrincipale nav ul li img {
+  body #corpsPrincipale nav ul li img {
     margin-left: 20%;
     width: 1.5ex;
     -webkit-transform: rotate(90deg);
@@ -418,7 +434,7 @@
     -webkit-filter: invert(100%);
             filter: invert(100%);
   }
-  #corpsPrincipale nav ul .line {
+  body #corpsPrincipale nav ul .line {
     display: none;
     width: 120%;
     height: 2px;
@@ -426,13 +442,15 @@
     margin-bottom: 2%;
     background-color: white;
   }
-  #corpsPrincipale nav ul:hover li {
+  body #corpsPrincipale nav ul:hover li,
+  body #corpsPrincipale nav ul:focus li {
     display: block;
   }
-  #corpsPrincipale nav ul:hover .line {
+  body #corpsPrincipale nav ul:hover .line,
+  body #corpsPrincipale nav ul:focus .line {
     display: block;
   }
-  #corpsPrincipale section {
+  body #corpsPrincipale section {
     margin-top: 5%;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -443,11 +461,10 @@
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-  #corpsPrincipale section article {
-    margin-left: 5%;
+  body #corpsPrincipale section article {
     margin-right: 5%;
   }
-  #corpsPrincipale section article .image {
+  body #corpsPrincipale section article .image {
     position: relative;
     width: 40ex;
     height: 40ex;
@@ -455,13 +472,13 @@
     background-size: cover;
     overflow: hidden;
   }
-  #corpsPrincipale section article .image video {
+  body #corpsPrincipale section article .image video {
     position: absolute;
     height: 100%;
     -webkit-transform: scale(1.2);
             transform: scale(1.2);
   }
-  #corpsPrincipale section article .TitreEtLikes {
+  body #corpsPrincipale section article .TitreEtLikes {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -474,42 +491,74 @@
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  #corpsPrincipale section article .TitreEtLikes div {
+  body #corpsPrincipale section article .TitreEtLikes div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
   }
-  #corpsPrincipale section article .TitreEtLikes div p {
+  body #corpsPrincipale section article .TitreEtLikes div button {
+    border-width: 0;
+    background-color: transparent;
+  }
+  body #corpsPrincipale section article .TitreEtLikes div p {
     margin-right: 20%;
   }
-  #lightBox {
+  body #corpsPrincipale #compteur_likes_total {
+    position: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    bottom: 0%;
+    right: 10%;
+    width: 20%;
+    max-width: 40ex;
+    background-color: #cd563f;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  body #corpsPrincipale #compteur_likes_total img {
+    position: absolute;
+    width: 20px;
+    margin-left: 3%;
+    margin-right: 30%;
+    top: 30%;
+    left: 33%;
+  }
+  body #corpsPrincipale #compteur_likes_total p {
+    text-align: justify;
+    margin-left: 10%;
+    margin-right: 0%;
+  }
+  body #lightBox {
     display: none;
     position: relative;
     padding-top: 3%;
   }
-  #lightBox #closeLogo {
+  body #lightBox #closeLogo {
     position: absolute;
     width: 2%;
     color: #901C1C;
     right: 0px;
   }
-  #lightBox #media {
+  body #lightBox #media {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     height: 100ex;
   }
-  #lightBox #media #back {
+  body #lightBox #media #back {
     margin-top: auto;
     margin-bottom: auto;
     margin-right: 5%;
   }
-  #lightBox #media #back img {
+  body #lightBox #media #back img {
     width: 5ex;
   }
-  #lightBox #media .photo {
+  body #lightBox #media .photo {
     position: relative;
     background-image: none;
     background-repeat: no-repeat;
@@ -520,21 +569,21 @@
             box-shadow: 5px 5px 10px grey;
     overflow: hidden;
   }
-  #lightBox #media .photo video {
+  body #lightBox #media .photo video {
     position: absolute;
     position: center;
   }
-  #lightBox #media #next {
+  body #lightBox #media #next {
     margin-top: auto;
     margin-bottom: auto;
     margin-left: 5%;
   }
-  #lightBox #media #next img {
+  body #lightBox #media #next img {
     width: 5ex;
     -webkit-transform: rotate(180deg);
             transform: rotate(180deg);
   }
-  #formulaire {
+  body #formulaire {
     z-index: 5;
     display: none;
     position: fixed;
@@ -549,37 +598,37 @@
     color: #312E2E;
     border-radius: 10px;
   }
-  #formulaire a {
+  body #formulaire a {
     position: absolute;
     right: 10%;
   }
-  #formulaire a img {
+  body #formulaire a img {
     width: 3ex;
   }
-  #formulaire h3 {
+  body #formulaire h3 {
     color: black;
     font-size: 5ex;
     margin-bottom: 0%;
   }
-  #formulaire p {
+  body #formulaire p {
     color: black;
     margin-top: 0%;
     font-size: 4ex;
   }
-  #formulaire label {
+  body #formulaire label {
     font-size: 3ex;
   }
-  #formulaire input {
+  body #formulaire input {
     width: 100%;
     height: 5ex;
     border-style: none;
     border-radius: 5px;
   }
-  #formulaire textarea {
+  body #formulaire textarea {
     border-style: none;
     border-radius: 5px;
   }
-  #formulaire button {
+  body #formulaire button {
     margin-top: 7%;
     margin-left: 10%;
     height: 10ex;
@@ -588,7 +637,7 @@
     border-radius: 5px;
     width: 30%;
   }
-  #formulaire button p {
+  body #formulaire button p {
     margin-left: 10%;
     margin-right: 10%;
     margin-top: auto;

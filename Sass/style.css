@@ -8,61 +8,6 @@
   src: url("DM_Sans/DMSans-Regular.ttf");
 }
 
-@font-face {
-  font-family: 'DMSans';
-  src: url("DM_Sans/DMSans-Medium.ttf");
-}
-
-@font-face {
-  font-family: 'DMSansSmall';
-  src: url("DM_Sans/DMSans-Regular.ttf");
-}
-
-ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  font-size: xxx-large;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-top: 10%;
-}
-
-ul li {
-  font-size: 25%;
-  list-style-type: none;
-  border-style: solid;
-  border-width: 1px;
-  border-color: gray;
-  border-radius: 30px;
-  padding: 1% 1.5% 1% 1.5%;
-  margin-right: 2%;
-  margin-bottom: 2%;
-  font-family: "DMSans";
-  color: #901C1C;
-}
-
-ul .clicked {
-  font-size: 25%;
-  list-style-type: none;
-  border-style: solid;
-  border-width: 1px;
-  border-color: gray;
-  border-radius: 30px;
-  padding: 1% 1.5% 1% 1.5%;
-  margin-right: 2%;
-  margin-bottom: 2%;
-  background-color: #901C1C;
-  color: blanchedalmond;
-}
-
 @media (max-width: 450px) {
   body {
     min-width: 341px;
@@ -120,8 +65,7 @@ ul .clicked {
     font-family: "DMSans";
     color: #901C1C;
   }
-  header ul .clicked {
-    font-size: 25%;
+  header ul li .clicked {
     list-style-type: none;
     border-style: solid;
     border-width: 1px;
@@ -215,6 +159,10 @@ ul .clicked {
 }
 
 @media (min-width: 450px) {
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
   body {
     max-width: 1400px;
     min-width: 1208px;
@@ -264,25 +212,28 @@ ul .clicked {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: start;
-    margin-top: 5%;
+    margin-top: 4%;
     padding-left: 2%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   header nav ul li {
-    margin-right: 1%;
-    padding: 0.2% 0.5% 0.2% 0.5%;
-    font-size: 30%;
-  }
-  header nav ul .clicked {
-    margin-right: 1%;
     list-style-type: none;
     border-style: solid;
     border-width: 1px;
     border-color: gray;
     border-radius: 30px;
-    padding: 0.2% 0.5% 0.2% 0.5%;
-    background-color: #901C1C;
-    color: blanchedalmond;
-    font-size: 30%;
+    padding: 0.5% 0.5% 0.5% 0.5%;
+    margin-right: 0.7%;
+    font-family: "DMSans";
+    color: #901C1C;
+  }
+  header nav ul li button {
+    border: 0;
+    background-color: transparent;
+    color: inherit;
+    font-weight: bold;
   }
   main {
     width: 100%;
@@ -312,6 +263,7 @@ ul .clicked {
         flex-wrap: wrap;
   }
   main section article {
+    padding-top: 3%;
     text-align: center;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -325,9 +277,9 @@ ul .clicked {
     text-decoration: none;
   }
   main section article div {
-    height: 85%;
+    height: 100%;
     width: 100%;
-    background-color: yellow;
+    background-color: transparent;
     background-image: none;
     margin-left: auto;
     margin-right: auto;
@@ -367,10 +319,28 @@ ul .clicked {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    margin-top: 4%;
+    padding-left: 3%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding: 0px;
+  }
+  main section article ul li {
+    list-style-type: none;
+    border-style: solid;
+    border-width: 1px;
+    border-color: gray;
+    border-radius: 30px;
+    padding: 0.5% 0.5% 0.5% 0.5%;
+    margin-right: 0.7%;
+    font-family: "DMSans";
+    color: #901C1C;
+  }
+  main section article ul li button {
+    border: 0;
+    background-color: transparent;
+    color: inherit;
+    font-weight: bold;
   }
 }
 /*# sourceMappingURL=style.css.map */

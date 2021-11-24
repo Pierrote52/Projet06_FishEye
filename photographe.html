@@ -23,7 +23,7 @@
 <body>
     <div id="corpsPrincipale">
         <header>
-            <a href="/Projet06_FishEye/index.html"><img src="/Projet06_FishEye/assets/logoFishEye.png"></a>
+            <a href="./index.html"><img src="./assets/logoFishEye.png"></a>
         </header>
         <div id="vignettePhotographe">
             <h1>Nom</h1>
@@ -31,22 +31,30 @@
             <h3>Slogan du photographe </h3>
             <ul></ul>
             <div id="photoProfil"></div>
-            <div id="btn-ContactezMoi">
+            <button id="btn-ContactezMoi">
                 <p>Contactez-moi</p>
-            </div>
+            </button>
         </div>
         <nav id="navigator">
             <h2>Trier par</h2>
-            <ul>
+            <ul role="menuitem">
                 <li id="selectedLi">
-                    <p>Popularité</p><img src="./assets/logos/chevron-left-solid.svg"></li>
+                    <button></button><img src="./assets/logos/chevron-left-solid.svg"></li>
                 <div class="line"></div>
-                <li>Date</li>
+                <li>
+                    <button></button>
+                </li>
                 <div class="line"></div>
-                <li>Titre</li>
+                <li>
+                    <button></button>
+                </li>
             </ul>
         </nav>
         <section></section>
+        <div id="compteur_likes_total">
+            <p id="compteur_likes_total_displayed">Chargement...</p><img src="assets/logos/heart-solid.svg">
+            <p id="tarifJournalier"></p>
+        </div>
 
 
     </div>
@@ -77,6 +85,6 @@
         </form>
     </div>
 </body>
-<script src="/Projet06_FishEye/JS/photographes.js"></script>
+<script src="./JS/photographes.js"></script>
 
 </html>

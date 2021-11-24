@@ -1,0 +1,23 @@
+{
+    "name": "fisheye",
+    "version": "1.0.0",
+    "description": "",
+    "main": "main.js",
+    "dependencies": {},
+    "devDependencies": {
+        "eslint": "^8.2.0"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Pierrote52/Projet06_FishEye.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Pierrote52/Projet06_FishEye/issues"
+    },
+    "homepage": "https://github.com/Pierrote52/Projet06_FishEye#readme"
+}
