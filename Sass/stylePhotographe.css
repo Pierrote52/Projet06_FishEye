@@ -381,76 +381,43 @@
     font-size: 2ex;
     color: beige;
   }
-  body #corpsPrincipale nav {
+  body #corpsPrincipale #myNavigator {
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    overflow: hidden;
+  }
+  body #corpsPrincipale #myNavigator #navigator {
+    font-size: 1.5em;
     margin-left: 5%;
-    font-family: "DMSansSmall";
-    font-size: 3ex;
   }
-  body #corpsPrincipale nav h2 {
-    margin-right: 2%;
+  body #corpsPrincipale #myNavigator #navigator select {
+    border-radius: 0.3rem;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    font-size: 1em;
+    background: #901C1C;
+    border: none;
+    color: white;
+    padding: 15px 3.3rem 15px 2.5rem;
+    margin-left: 3%;
   }
-  body #corpsPrincipale nav ul {
-    z-index: 2;
+  body #corpsPrincipale #myNavigator #navigator select option {
+    font-size: 1.5em;
+  }
+  body #corpsPrincipale #myNavigator #navigator #chevronIcon {
     position: absolute;
-    margin-left: 15%;
-    top: 0%;
-    list-style: none;
+    top: 30%;
+    left: 28.5%;
     background-color: #901C1C;
-    padding: 2% 3% 1% 1%;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    border-radius: 10px;
   }
-  body #corpsPrincipale nav ul #selectedLi {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+  body #corpsPrincipale #myNavigator #navigator #chevronIcon img {
+    -webkit-filter: invert(1);
+            filter: invert(1);
+    width: 1rem;
+    -webkit-transform: rotateZ(90deg);
+            transform: rotateZ(90deg);
   }
-  body #corpsPrincipale nav ul li {
-    display: none;
-    margin-bottom: 5%;
-    color: white;
-    margin-right: 20%;
-  }
-  body #corpsPrincipale nav ul li button {
-    border-width: 0;
-    background-color: transparent;
-    font-size: inherit;
-    color: white;
-    outline: none;
-    margin: 0%;
-    margin-right: 3%;
-  }
-  body #corpsPrincipale nav ul li img {
-    margin-left: 20%;
-    width: 1.5ex;
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
-    -webkit-filter: invert(100%);
-            filter: invert(100%);
-  }
-  body #corpsPrincipale nav ul .line {
-    display: none;
-    width: 120%;
-    height: 2px;
-    margin-top: 3%;
-    margin-bottom: 2%;
-    background-color: white;
-  }
-  body #corpsPrincipale nav ul:hover li,
-  body #corpsPrincipale nav ul:focus li {
-    display: block;
-  }
-  body #corpsPrincipale nav ul:hover .line,
-  body #corpsPrincipale nav ul:focus .line {
-    display: block;
-  }
-  body #corpsPrincipale section {
+  body #corpsPrincipale #lesVignettes {
     margin-top: 5%;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -461,10 +428,10 @@
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-  body #corpsPrincipale section article {
+  body #corpsPrincipale #lesVignettes article {
     margin-right: 5%;
   }
-  body #corpsPrincipale section article .image {
+  body #corpsPrincipale #lesVignettes article .image {
     position: relative;
     width: 40ex;
     height: 40ex;
@@ -472,13 +439,13 @@
     background-size: cover;
     overflow: hidden;
   }
-  body #corpsPrincipale section article .image video {
+  body #corpsPrincipale #lesVignettes article .image video {
     position: absolute;
     height: 100%;
     -webkit-transform: scale(1.2);
             transform: scale(1.2);
   }
-  body #corpsPrincipale section article .TitreEtLikes {
+  body #corpsPrincipale #lesVignettes article .TitreEtLikes {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -491,18 +458,18 @@
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  body #corpsPrincipale section article .TitreEtLikes div {
+  body #corpsPrincipale #lesVignettes article .TitreEtLikes div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
   }
-  body #corpsPrincipale section article .TitreEtLikes div button {
+  body #corpsPrincipale #lesVignettes article .TitreEtLikes div button {
     border-width: 0;
     background-color: transparent;
   }
-  body #corpsPrincipale section article .TitreEtLikes div p {
+  body #corpsPrincipale #lesVignettes article .TitreEtLikes div p {
     margin-right: 20%;
   }
   body #corpsPrincipale #compteur_likes_total {
@@ -539,10 +506,13 @@
     padding-top: 3%;
   }
   body #lightBox #closeLogo {
+    border-width: 0;
+    background-color: transparent;
     position: absolute;
-    width: 2%;
+    width: 3%;
     color: #901C1C;
     right: 0px;
+    margin-right: 3%;
   }
   body #lightBox #media {
     display: -webkit-box;
@@ -550,12 +520,14 @@
     display: flex;
     height: 100ex;
   }
-  body #lightBox #media #back {
+  body #lightBox #media button {
     margin-top: auto;
     margin-bottom: auto;
     margin-right: 5%;
+    border-width: 0;
+    background-color: transparent;
   }
-  body #lightBox #media #back img {
+  body #lightBox #media button img {
     width: 5ex;
   }
   body #lightBox #media .photo {
@@ -590,7 +562,7 @@
     top: 0%;
     width: 30%;
     height: 70%;
-    margin-left: 20%;
+    margin-left: 28%;
     margin-top: 5%;
     background-color: #cd563f;
     padding: 5%;

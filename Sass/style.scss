@@ -188,15 +188,15 @@
                     margin-right: 0.7%;
                     font-family: $fontPrincipalbold;
                     color: $colorPrimary;
+                    &.clicked {
+                        color: white;
+                        background-color: $colorPrimary;
+                    }
                     button {
                         border: 0;
                         background-color: transparent;
                         color: inherit;
                         font-weight: bold;
-                        // .clicked {
-                        //     color: red;
-                        //     background-color: lawngreen;
-                        // }
                     }
                 }
             }

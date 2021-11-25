@@ -23,7 +23,7 @@
 <body>
     <div id="corpsPrincipale">
         <header>
-            <a href="./index.html"><img src="./assets/logoFishEye.png"></a>
+            <a href="./index.html"><img src="./assets/logoFishEye.png" alt="logo FishEye"></a>
         </header>
         <div id="vignettePhotographe">
             <h1>Nom</h1>
@@ -35,22 +35,21 @@
                 <p>Contactez-moi</p>
             </button>
         </div>
-        <nav id="navigator">
-            <h2>Trier par</h2>
-            <ul role="menuitem">
-                <li id="selectedLi">
-                    <button></button><img src="./assets/logos/chevron-left-solid.svg"></li>
-                <div class="line"></div>
-                <li>
-                    <button></button>
-                </li>
-                <div class="line"></div>
-                <li>
-                    <button></button>
-                </li>
-            </ul>
-        </nav>
-        <section></section>
+        <div id="myNavigator">
+            <section id="navigator">
+                <label>Trier par</label>
+                <select>
+                <option>Popularité</option>
+                <option>Date</option>
+                <option>Titre</option>
+               
+            </select>
+                <span id="chevronIcon"><img src= "assets/logos/chevron-left-solid.svg" alt="logo chevron montant"></span>
+
+            </section>
+
+        </div>
+        <section id="lesVignettes"></section>
         <div id="compteur_likes_total">
             <p id="compteur_likes_total_displayed">Chargement...</p><img src="assets/logos/heart-solid.svg">
             <p id="tarifJournalier"></p>
@@ -59,17 +58,17 @@
 
     </div>
     <div id="lightBox">
-        <div id="closeLogo"><img src="./assets/logos/times-solid.svg"></div>
+        <button id="closeLogo"><img src="./assets/logos/times-solid.svg"></button>
         <div id="media">
-            <div id="back"><img src="./assets/logos/chevron-left-solid.svg"></img>
-            </div>
+            <button id="back"><img src="./assets/logos/chevron-left-solid.svg"></img>
+            </button>
             <div class="photo"></div>
-            <div id="next"><img src="./assets/logos/chevron-left-solid.svg"></img>
-            </div>
+            <button id="next"><img src="./assets/logos/chevron-left-solid.svg"></img>
+            </button>
         </div>
     </div>
     <div id="formulaire">
-        <a href="#" id="closeForm"><img src="./assets/logos/times-solid.svg"></a>
+        <a href="#" id="closeForm"><img src="./assets/logos/times-solid.svg" alt="logo pour fermer la modale"></a>
         <h3>Contactez-moi</h3>
         <p>Nom du photographe</p>
         <form>

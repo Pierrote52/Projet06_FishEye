@@ -1,10 +1,10 @@
 let idPhotographe = new URL(window.location.href).searchParams.get('id');
 let currentPhotographe;
-let section = document.getElementsByTagName("SECTION")[0];
+let section = document.getElementsByTagName("SECTION")[1];
 let oppenForm = document.getElementById('btn-ContactezMoi');
 let closeFormLogo = document.getElementById('closeForm');
 let btnEnvoyer = document.getElementById('envoyer');
-let listDisplayed = document.getElementById("navigator");
+// let listDisplayed = document.getElementById("navigator");
 let corpPrincipale = document.getElementById('corpsPrincipale');
 let lightBox = document.getElementById("lightBox");
 let close = document.getElementById('closeLogo');
@@ -67,11 +67,13 @@ function filtrePhotos(data) {
             listMedia.push(media);
         }
     }
-    displayNavigation();
+    // displayNavigation();
     createVignette(listMedia, data.photographers);
 }
 //Creer une vignette. 
 function createVignette(Listmedia) {
+    //ceci supprimer ce qu'il y a dans la section avant de creer les Vignettes. 
+    section.innerHTML = "";
     for (let media of Listmedia) {
         if (media.image != null) {
             createPhoto(media);
@@ -264,7 +266,7 @@ function displayFormContact() {
 }
 //Ferme le formulaire. 
 closeFormLogo.addEventListener('click', function() {
-    window.removeEventListener('keyup', true);
+    // window.removeEventListener('onkeyup', true);
     closeForm();
 
 });
@@ -295,34 +297,31 @@ function stateLikesTotal(likes) {
 
 }
 
+let filtreSelected;
+let select = document.getElementsByTagName('SELECT')[0];
+select.addEventListener('change', function(selected) {
 
-
-//---Cette partie s'occupe du tri dans les Trier par------
-
-function displayNavigation() {
-    let buttonListDisplayed = listDisplayed.getElementsByTagName('button');
-    let cathegorieTri = ["Popularité", "Date", "Titre"];
-    for (let i = 0; i < 3; i++) {
-        buttonListDisplayed[i].innerHTML = cathegorieTri[i];
-        buttonListDisplayed[i].addEventListener('click', function() {
-            totalLikes = 0;
-            if (this.innerHTML == "Popularité") {
-                trierMediaParPopularite();
-            } else if (this.innerHTML == "Date") {
-                trierMediaParDate();
-            } else if (this.innerHTML == "Titre") {
-                trierMediaParTitre();
-            }
-            section.innerHTML = "";
-            createVignette(listMedia);
-        })
+    filtreSelected = selected.target.value;
+    console.log(filtreSelected);
+    totalLikes = 0;
+    if (filtreSelected == "Popularité") {
+        trierMediaParPopularite();
+    } else if (filtreSelected == "Date") {
+        trierMediaParDate();
+    } else if (filtreSelected == "Titre") {
+        trierMediaParTitre();
     }
-}
+    createVignette(listMedia);
+})
+
+
+
 
 function trierMediaParPopularite() {
     listMedia.sort(function(a, b) {
         return b.likes - a.likes;
     });
+
 }
 
 function trierMediaParTitre() {

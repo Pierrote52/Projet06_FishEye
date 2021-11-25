@@ -229,6 +229,10 @@
     font-family: "DMSans";
     color: #901C1C;
   }
+  header nav ul li.clicked {
+    color: white;
+    background-color: #901C1C;
+  }
   header nav ul li button {
     border: 0;
     background-color: transparent;

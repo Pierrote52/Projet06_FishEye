@@ -350,69 +350,39 @@
                         }
                     }
                 }
-                nav {
+                #myNavigator {
                     position: relative;
-                    display: flex;
-                    margin-left: 5%;
-                    font-family: $fontPrincipalSmall;
-                    font-size: 3ex;
-                    h2 {
-                        margin-right: 2%;
-                    }
-                    ul {
-                        z-index: 2;
-                        position: absolute;
-                        margin-left: 15%;
-                        top: 0%;
-                        list-style: none;
-                        background-color: $colorPrimary;
-                        padding: 2% 3%1%1%;
-                        align-items: flex-start;
-                        border-radius: 10px;
-                        #selectedLi {
-                            display: flex;
-                        }
-                        li {
-                            display: none;
-                            margin-bottom: 5%;
+                    overflow: hidden;
+                    #navigator {
+                        font-size: 1.5em;
+                        margin-left: 5%;
+                        select {
+                            border-radius: 0.3rem;
+                            appearance: none;
+                            font-size: 1em;
+                            background: $colorPrimary;
+                            border: none;
                             color: white;
-                            margin-right: 20%;
-                            button {
-                                border-width: 0;
-                                background-color: transparent;
-                                font-size: inherit;
-                                color: white;
-                                outline: none;
-                                margin: 0%;
-                                margin-right: 3%;
+                            padding: 15px 3.3rem 15px 2.5rem;
+                            margin-left: 3%;
+                            option {
+                                font-size: 1.5em;
                             }
+                        }
+                        #chevronIcon {
+                            position: absolute;
+                            top: 30%;
+                            left: 28.5%;
+                            background-color: $colorPrimary;
                             img {
-                                margin-left: 20%;
-                                width: 1.5ex;
-                                transform: rotate(90deg);
-                                filter: invert(100%);
+                                filter: invert(1);
+                                width: 1rem;
+                                transform: rotateZ(90deg);
                             }
-                        }
-                        .line {
-                            display: none;
-                            width: 120%;
-                            height: 2px;
-                            margin-top: 3%;
-                            margin-bottom: 2%;
-                            background-color: white;
-                        }
-                    }
-                    ul:hover,
-                    ul:focus {
-                        li {
-                            display: block;
-                        }
-                        .line {
-                            display: block;
                         }
                     }
                 }
-                section {
+                #lesVignettes {
                     margin-top: 5%;
                     justify-content: center;
                     display: flex;
@@ -485,18 +455,23 @@
                 position: relative;
                 padding-top: 3%;
                 #closeLogo {
+                    border-width: 0;
+                    background-color: transparent;
                     position: absolute;
-                    width: 2%;
+                    width: 3%;
                     color: $colorPrimary;
-                    right: 0px
+                    right: 0px;
+                    margin-right: 3%;
                 }
                 #media {
                     display: flex;
                     height: 100ex;
-                    #back {
+                    button {
                         margin-top: auto;
                         margin-bottom: auto;
                         margin-right: 5%;
+                        border-width: 0;
+                        background-color: transparent;
                         img {
                             width: 5ex;
                         }
@@ -533,7 +508,7 @@
                 top: 0%;
                 width: 30%;
                 height: 70%;
-                margin-left: 20%;
+                margin-left: 28%;
                 margin-top: 5%;
                 background-color: $colorOrange;
                 padding: 5%;

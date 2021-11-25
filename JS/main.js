@@ -37,7 +37,13 @@ const data = async() => {
     return await fetch('https://raw.githubusercontent.com/Pierrote52/Projet06_FishEye/master/JSON.json').then((v) => { return v.json() }).then(v => { return [v] });
 }
 data().then(v => showProducts(v))
-    //---------J'AFFICHE TOUS LES PRODUITS---------
+    //---------J'AFFICHE TouTes les vignettes ---------
+function displayAllVignettes() {
+    let lesArticles = document.getElementsByTagName("ARTICLE");
+    for (let article of lesArticles) {
+        article.style.display = "block";
+    }
+}
 
 function showProducts(data) {
     for (let product of data) {
@@ -75,18 +81,11 @@ let listFiltres = [];
 for (let button of buttonDeLaNavPrincipale) {
     let content = button.innerHTML.substr(1).toLowerCase();
     button.addEventListener('click', function() {
-
-        //Cette fonction va etre appelé quand on voudra afficher tous les photographes. 
-        function displayAllVignettes() {
-            let lesArticles = document.getElementsByTagName("ARTICLE");
-            for (let article of lesArticles) {
-                article.style.display = "block";
-            }
-        }
-
-
-
-        /*Cette commande permet de filtrer seulement pour un seul TAg à la fois*/
+        console.log(content)
+            //Cette fonction va etre appelé quand on voudra afficher tous les photographes. 
+        displayAllVignettes();
+        /*Cette commande permet de filtrer seulement pour un seul TAg à la fois. Nous allons controler si la premier element de la liste 
+        est le meme que content */
         if (listFiltres[0] == content) {
             displayAllVignettes();
             listFiltres = [];
@@ -96,7 +95,6 @@ for (let button of buttonDeLaNavPrincipale) {
         }
         manageNavBar();
     })
-
 }
 
 function manageList(filtre) {
@@ -152,14 +150,14 @@ function manageNavBar() {
     let buttonDeLaNavPrincipale = document.getElementsByTagName("header")[0].getElementsByTagName("nav")[0].getElementsByTagName("UL")[0].getElementsByTagName("BUTTON");
     if (listFiltres.length >= 1) {
         for (let li of buttonDeLaNavPrincipale) {
-            console.log(buttonDeLaNavPrincipale.length);
+            console.log(li.innerHTML);
             let content = li.innerHTML.substr(1).toLowerCase();
-            content == listFiltres[0] ? li.className = "clicked" :
-                li.className = "";
+            content == listFiltres[0] ? li.parentNode.className = "clicked" :
+                li.parentNode.className = "";
         }
     } else {
         for (let li of buttonDeLaNavPrincipale) {
-            li.className = ""
+            li.parentNode.className = "";
         }
     }
 }
