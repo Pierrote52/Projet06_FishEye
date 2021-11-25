@@ -15,7 +15,7 @@ let totalLikes = 0;
 
 //Ici nous allons implementer une variable qui va gerer si nous sommes en Local ou sur GitHub. 
 // Cette variable doit etre egale à "/Projet06_FishEye" si nous sommes sur GitHub, sinon en Local ce sera "." .
-let linkHelperLocalVsGitHub = "."
+let linkHelperLocalVsGitHub = "/Projet06_FishEye"
 
 
 const data = async() => {
@@ -287,7 +287,7 @@ btnEnvoyer.addEventListener('click', function(event) {
         champs.push(document.getElementById('lnom').value);
         champs.push(document.getElementById('lemail').value);
         champs.push(document.getElementById('lmessage').value);
-        console.log(champs);
+
 
     })
     //Gere les likes de compteur Likes Total. 
@@ -302,7 +302,6 @@ let select = document.getElementsByTagName('SELECT')[0];
 select.addEventListener('change', function(selected) {
 
     filtreSelected = selected.target.value;
-    console.log(filtreSelected);
     totalLikes = 0;
     if (filtreSelected == "Popularité") {
         trierMediaParPopularite();

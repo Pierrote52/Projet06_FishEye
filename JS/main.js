@@ -28,7 +28,7 @@ aPass.addEventListener('click', function() {
 
 //Ici nous allons implementer une variable qui va gerer si nous sommes en Local ou sur GitHub. 
 // Cette variable doit etre egale à "/Projet06_FishEye" si nous sommes sur GitHub, sinon en Local ce sera "." un champVide.
-let linkHelperLocalVsGitHub = "."
+let linkHelperLocalVsGitHub = "/Projet06_FishEye"
 
 const data = async() => {
 
@@ -81,8 +81,7 @@ let listFiltres = [];
 for (let button of buttonDeLaNavPrincipale) {
     let content = button.innerHTML.substr(1).toLowerCase();
     button.addEventListener('click', function() {
-        console.log(content)
-            //Cette fonction va etre appelé quand on voudra afficher tous les photographes. 
+        //Cette fonction va etre appelé quand on voudra afficher tous les photographes. 
         displayAllVignettes();
         /*Cette commande permet de filtrer seulement pour un seul TAg à la fois. Nous allons controler si la premier element de la liste 
         est le meme que content */
@@ -150,7 +149,6 @@ function manageNavBar() {
     let buttonDeLaNavPrincipale = document.getElementsByTagName("header")[0].getElementsByTagName("nav")[0].getElementsByTagName("UL")[0].getElementsByTagName("BUTTON");
     if (listFiltres.length >= 1) {
         for (let li of buttonDeLaNavPrincipale) {
-            console.log(li.innerHTML);
             let content = li.innerHTML.substr(1).toLowerCase();
             content == listFiltres[0] ? li.parentNode.className = "clicked" :
                 li.parentNode.className = "";

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
     <title>
@@ -37,8 +37,8 @@
         </div>
         <div id="myNavigator">
             <section id="navigator">
-                <label>Trier par</label>
-                <select>
+                <label for="select">Trier par</label>
+                <select id="select">
                 <option>Popularité</option>
                 <option>Date</option>
                 <option>Titre</option>
@@ -51,19 +51,19 @@
         </div>
         <section id="lesVignettes"></section>
         <div id="compteur_likes_total">
-            <p id="compteur_likes_total_displayed">Chargement...</p><img src="assets/logos/heart-solid.svg">
+            <p id="compteur_likes_total_displayed">Chargement...</p><img src="assets/logos/heart-solid.svg" alt="coeur rouge">
             <p id="tarifJournalier"></p>
         </div>
 
 
     </div>
     <div id="lightBox">
-        <button id="closeLogo"><img src="./assets/logos/times-solid.svg"></button>
+        <button id="closeLogo"><img src="./assets/logos/times-solid.svg" alt="croix fermeture modale"></button>
         <div id="media">
-            <button id="back"><img src="./assets/logos/chevron-left-solid.svg"></img>
+            <button id="back"><img src="./assets/logos/chevron-left-solid.svg" alt = "chevron retour"></img>
             </button>
             <div class="photo"></div>
-            <button id="next"><img src="./assets/logos/chevron-left-solid.svg"></img>
+            <button id="next"><img src="./assets/logos/chevron-left-solid.svg" alt = "chevron suivant"></img>
             </button>
         </div>
     </div>
@@ -84,6 +84,6 @@
         </form>
     </div>
 </body>
-<script src="./JS/photographes.js"></script>
+<script src="/Projet06_FishEye/JS/photographes.js"></script>
 
 </html>
