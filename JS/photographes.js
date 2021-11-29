@@ -329,10 +329,6 @@ btnEnvoyer.addEventListener('click', function(event) {
         console.log('Message : ' + this.message.length!= 0 ? this.message:"Auccun message laissé...");
         closeForm()
 
-    }else{
-        console.log('probleme');
-        console.log(this.prenom + "  " + this.nom + "  " + this.email + this.message);
-
     }
 
 
@@ -402,17 +398,11 @@ function trierMediaParDate() {
 //Fonction qui contrôle les informations saisies dans le champ de saisie du nom et aussi du prénom.
 function controleName(champ){
     if (/^[A-Za-zéèàç-]+$/.test(champ) ){
-        console.log('Name Ok ! ');
-        console.log(champ);
         return true;
-        // lastName = value.target.value;
-        // responseFirst.style.display= "block";
-        // responseFirst.innerText= "Prénom valide";
-        // responseFirst.style.color="green";
 
 }else{
     //Si le champ de saisie ne fonctionne pas. 
-    console.log('champ pas bon ' + champ);
+  
     return false;
 }
 
@@ -420,11 +410,10 @@ function controleName(champ){
 //Cette ffonction contrôle que la valeur mail soit bien au format e-mail.
 function controleEmail(mail){
     if(/^([a-z]||[0-9]||[-|.|/|=|+|,|?|è|é|"|'|(|&|$|*)])+[@]{1}([a-z]||[0-9]||[-|.|/|=|+|,|?|è|é|"|'|(|&|$|*)]){3,}[.]{1}[a-z]{2,3}$/.test(mail)){
-        console.log('Email ok ');
+     
         return true;
     
       } else {
-        console.log('Email pas ok ');
         return false;
       }
 
