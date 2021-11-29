@@ -46,6 +46,7 @@ function displayPhotographeInfo(photographe) {
     let slogan = vignettePhotographe.getElementsByTagName("H3")[0];
     let photoProfil = vignettePhotographe.getElementsByTagName("DIV")[0];
     let ulFiltres = vignettePhotographe.getElementsByTagName("UL")[0];
+   
     //Assigner les variables.
     name.innerHTML = photographe.name;
     localistion.innerHTML = `${photographe.city}, ${photographe.country}`;
@@ -255,6 +256,8 @@ function displayFormContact() {
     form.ariaHidden = false;
     let premierInput = document.getElementById('fprenom');
     form.style.display = "block";
+    let name = document.getElementById('formNomDuPhotographe');
+    name.innerHTML = currentPhotographe.name;
     window.addEventListener('keyup', (event) => {
         if (event.key == 'Escape') {
             closeForm();
