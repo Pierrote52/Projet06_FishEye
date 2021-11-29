@@ -1,4 +1,4 @@
-    @import "Ui.scss";
+    @import "UI.scss";
     @media (max-width: 450px) {
         img {
             margin-top: 10%;
@@ -545,22 +545,16 @@
                     border-style: none;
                     border-radius: 5px;
                 }
-                button {
+                #envoyer {
                     margin-top: 7%;
                     margin-left: 10%;
-                    height: 10ex;
                     background-color: $colorPrimary;
                     border-style: none;
                     border-radius: 5px;
-                    width: 30%;
-                    p {
-                        margin-left: 10%;
-                        margin-right: 10%;
-                        margin-top: auto;
-                        margin-bottom: auto;
-                        font-size: 3ex;
-                        color: snow;
-                    }
+                    width: 50%;
+                    font-size: 3ex;
+                    color: snow;
+                    
                 }
             }
         }

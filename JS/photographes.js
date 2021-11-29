@@ -15,7 +15,7 @@ let totalLikes = 0;
 
 //Ici nous allons implementer une variable qui va gerer si nous sommes en Local ou sur GitHub. 
 // Cette variable doit etre egale à "/Projet06_FishEye" si nous sommes sur GitHub, sinon en Local ce sera "." .
-let linkHelperLocalVsGitHub = "/Projet06_FishEye"
+let linkHelperLocalVsGitHub = "."
 
 
 const data = async() => {
@@ -281,12 +281,13 @@ function closeForm() {
 }
 //Envoie des infos dans le formulaire. 
 btnEnvoyer.addEventListener('click', function(event) {
-        let champs = [];
-        event.preventDefault();
+    event.preventDefault();
+    let champs = [];
         champs.push(document.getElementById('fprenom').value);
         champs.push(document.getElementById('lnom').value);
         champs.push(document.getElementById('lemail').value);
         champs.push(document.getElementById('lmessage').value);
+        console.log(champs);
 
 
     })

@@ -600,20 +600,13 @@
     border-style: none;
     border-radius: 5px;
   }
-  body #formulaire button {
+  body #formulaire #envoyer {
     margin-top: 7%;
     margin-left: 10%;
-    height: 10ex;
     background-color: #901C1C;
     border-style: none;
     border-radius: 5px;
-    width: 30%;
-  }
-  body #formulaire button p {
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: auto;
-    margin-bottom: auto;
+    width: 50%;
     font-size: 3ex;
     color: snow;
   }
