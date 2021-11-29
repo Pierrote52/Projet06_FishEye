@@ -600,6 +600,11 @@
     border-style: none;
     border-radius: 5px;
   }
+  body #formulaire div {
+    display: none;
+    color: white;
+    font-size: 12px;
+  }
   body #formulaire #envoyer {
     margin-top: 7%;
     margin-left: 10%;

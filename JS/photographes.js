@@ -15,7 +15,7 @@ let totalLikes = 0;
 
 //Ici nous allons implementer une variable qui va gerer si nous sommes en Local ou sur GitHub. 
 // Cette variable doit etre egale à "/Projet06_FishEye" si nous sommes sur GitHub, sinon en Local ce sera "." .
-let linkHelperLocalVsGitHub = "."
+let linkHelperLocalVsGitHub = "/Projet06_FishEye"
 
 
 const data = async() => {
@@ -282,15 +282,72 @@ function closeForm() {
 //Envoie des infos dans le formulaire. 
 btnEnvoyer.addEventListener('click', function(event) {
     event.preventDefault();
-    let champs = [];
-        champs.push(document.getElementById('fprenom').value);
-        champs.push(document.getElementById('lnom').value);
-        champs.push(document.getElementById('lemail').value);
-        champs.push(document.getElementById('lmessage').value);
-        console.log(champs);
+
+    //Ici il va falloir implementer les contrôles de champ.
+
+    //Ici on contrôle si le champ du prénom est valide. 
+    if(controleName(document.getElementById('fprenom').value)==true) {
+        champValid(document.getElementById('invalid_prenom'),);
+        this.prenom = document.getElementById('invalid_prenom')
+    }else {
+     errorMessageDisplay(document.getElementById('invalid_prenom'));
+     this.prenom =null;
+   }
+     //Ici on contrôle si le champ du nom est valide. 
+   if(controleName(document.getElementById('lnom').value)==true){
+       //Ici nous envoyon à la fonction qui gere la disposition du texte suivant sa validité ou non. 
+    champValid(document.getElementById('invalid_nom'),);
+    this.nom = document.getElementById('lnom').value;
+   }else {
+       errorMessageDisplay(document.getElementById('invalid_nom'));
+       this.nom =null;
+    }
+
+    //Ici on controle si le mail est valid ou pas et on sprécifié cette information à l'utilisateur. 
+    if(controleEmail(document.getElementById('lemail').value)==true){
+        //Ici nous envoyon à la fonction qui gere la disposition du texte suivant sa validité ou non. 
+     champValid(document.getElementById('invalid_email'),);
+     this.email = document.getElementById('lemail').value;
+    }else {
+        errorMessageDisplay(document.getElementById('invalid_email'));
+        this.email =null;
+     }
+     if(document.getElementById('lmessage').value.length>1){
+        //Ici nous envoyon à la fonction qui gere la disposition du texte suivant sa validité ou non. 
+     champValid(document.getElementById('invalid_message'),);
+     this.message = document.getElementById('lmessage').value;
+    }else {
+        errorMessageDisplay(document.getElementById('invalid_message'));
+        this.message =null;
+     }
+    //Verification que le formulaire est correctement rempli. 
+    if(this.prenom!=null&&this.nom!=null&&this.email!=null){
+        console.log('Le formulaire est correctement remplit : ')
+        console.log('Prenom : ' + this.prenom);
+        console.log('Nom : ' + this.nom);
+        console.log('E-mail : '+ this.email );
+        console.log('Message : ' + this.message.length!= 0 ? this.message:"Auccun message laissé...");
+        closeForm()
+
+    }else{
+        console.log('probleme');
+        console.log(this.prenom + "  " + this.nom + "  " + this.email + this.message);
+
+    }
+
 
 
     })
+
+
+    function errorMessageDisplay(messageHtml){
+        messageHtml.style.display = "block";
+
+    }
+    function champValid(messageHtml){
+        messageHtml.style.display = "none";
+
+    }
     //Gere les likes de compteur Likes Total. 
 function stateLikesTotal(likes) {
     totalLikes += likes;
@@ -337,6 +394,39 @@ function trierMediaParDate() {
     }
     listMedia.sort(SortArray);
 
+
+
+}
+
+
+//Fonction qui contrôle les informations saisies dans le champ de saisie du nom et aussi du prénom.
+function controleName(champ){
+    if (/^[A-Za-zéèàç-]+$/.test(champ) ){
+        console.log('Name Ok ! ');
+        console.log(champ);
+        return true;
+        // lastName = value.target.value;
+        // responseFirst.style.display= "block";
+        // responseFirst.innerText= "Prénom valide";
+        // responseFirst.style.color="green";
+
+}else{
+    //Si le champ de saisie ne fonctionne pas. 
+    console.log('champ pas bon ' + champ);
+    return false;
+}
+
+}
+//Cette ffonction contrôle que la valeur mail soit bien au format e-mail.
+function controleEmail(mail){
+    if(/^([a-z]||[0-9]||[-|.|/|=|+|,|?|è|é|"|'|(|&|$|*)])+[@]{1}([a-z]||[0-9]||[-|.|/|=|+|,|?|è|é|"|'|(|&|$|*)]){3,}[.]{1}[a-z]{2,3}$/.test(mail)){
+        console.log('Email ok ');
+        return true;
+    
+      } else {
+        console.log('Email pas ok ');
+        return false;
+      }
 
 
 }

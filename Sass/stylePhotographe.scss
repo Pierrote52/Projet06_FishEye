@@ -545,6 +545,12 @@
                     border-style: none;
                     border-radius: 5px;
                 }
+                div{
+                    display: none;
+                    color: white;
+                    font-size: 12px;
+                }
+                //Ici nous avons les champs qui permettent de gerer la validation des formulaires. 
                 #envoyer {
                     margin-top: 7%;
                     margin-left: 10%;

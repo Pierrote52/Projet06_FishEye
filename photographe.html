@@ -67,23 +67,27 @@
             </button>
         </div>
     </div>
-    <div id="formulaire">
+    <div id="formulaire" aria-labelledby="coordonnees">
         <a href="#" id="closeForm"><img src="./assets/logos/times-solid.svg" alt="logo pour fermer la modale"></a>
         <h3>Contactez-moi</h3>
         <p>Nom du photographe</p>
         <form>
             <label for="fprenom">Prénom</label><br>
-            <input type="text" id="fprenom"><br>
+            <input type="text" id="fprenom" aria-required=true><br>
+            <div id="invalid_prenom">Veuillez renseigner un prénom valide...</div><br>
             <label for="lnom">Nom</label><br>
             <input type="text" id="lnom"><br>
+            <div id="invalid_nom">Veuillez renseigner un nom valide...</div><br>
             <label for="lemail">Email</label><br>
             <input type="text" id="lemail"><br>
+            <div id="invalid_email">Veuillez renseigner un e-mail valide...</div><br>
             <label for="lmessage">Votre message</label><br>
             <textarea type="text" id="lmessage" rows="5" cols="40"></textarea><br>
+            <div id="invalid_message">Veuillez saisir un message ...</div><br>
             <input type="submit" id="envoyer">
         </form>
     </div>
 </body>
-<script src="./JS/photographes.js"></script>
+<script src="/Projet06_FishEye/JS/photographes.js"></script>
 
 </html>
