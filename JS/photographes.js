@@ -15,7 +15,7 @@ let totalLikes = 0;
 
 //Ici nous allons implementer une variable qui va gerer si nous sommes en Local ou sur GitHub. 
 // Cette variable doit etre egale à "/Projet06_FishEye" si nous sommes sur GitHub, sinon en Local ce sera "." .
-let linkHelperLocalVsGitHub = "."
+let linkHelperLocalVsGitHub = "/Projet06_FishEye"
 
 
 const data = async() => {
