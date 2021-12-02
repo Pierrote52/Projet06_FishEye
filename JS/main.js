@@ -1,10 +1,11 @@
+let mediaQueryList = window.matchMedia('(min-width: 450px');
 var section = document.getElementsByTagName("SECTION")[0];
-
-let mediaQueryList = window.matchMedia('(min-width: 450px')
 let passer = document.getElementById('passerAuContenu');
-
+let buttonDeLaNavPrincipale = document.getElementsByTagName("header")[0].getElementsByTagName("nav")[0].getElementsByTagName("UL")[0].getElementsByTagName("BUTTON");
+let listFiltres = [];
 document.onload = scrollCheck();
 
+//Cette fonction permet de savoir quand l'utilisateur commence à scroller, nous pourrons alors disposer le boutton qui permet d'aller au dessus. 
 function scrollCheck() {
     if (mediaQueryList.matches) {
         window.onscroll = function() {
@@ -20,20 +21,14 @@ function scrollCheck() {
 }
 let aPass = document.getElementById('passerAuContenu');
 aPass.addEventListener('click', function() {
-    document.documentElement.scrollTop = 0;
-    passer.style.display = "none";
-})
-
-
-
-//Ici nous allons implementer une variable qui va gerer si nous sommes en Local ou sur GitHub. 
-// Cette variable doit etre egale à "/Projet06_FishEye" si nous sommes sur GitHub, sinon en Local ce sera "." un champVide.
+        document.documentElement.scrollTop = 0;
+        passer.style.display = "none";
+    })
+    //Ici nous allons implementer une variable qui va gerer si nous sommes en Local ou sur GitHub. 
+    // Cette variable doit etre egale à "/Projet06_FishEye" si nous sommes sur GitHub, sinon en Local ce sera "." .
 let linkHelperLocalVsGitHub = "/Projet06_FishEye"
 
 const data = async() => {
-
-    //lien en local = https://raw.githubusercontent.com/Pierrote52/Projet06_FishEye/master/JSON.json
-    //lien sur GitHub : https://github.com/Pierrote52/Projet06_FishEye/master/JSON.json
     return await fetch('https://raw.githubusercontent.com/Pierrote52/Projet06_FishEye/master/JSON.json').then((v) => { return v.json() }).then(v => { return [v] });
 }
 data().then(v => showProducts(v))
@@ -44,7 +39,7 @@ function displayAllVignettes() {
         article.style.display = "block";
     }
 }
-
+// Ici nous allons disposer toutes les photographies des photographes. 
 function showProducts(data) {
     for (let product of data) {
         for (let i = 0; i < product.photographers.length; i++) {
@@ -55,7 +50,6 @@ function showProducts(data) {
             //Je vais creer les Tags pour mes Photographes.
             for (let tag of product["photographers"][i].tags) {
                 let li = document.createElement("LI");
-
                 li.innerHTML = `#${tag}`;
                 ul.appendChild(li);
             }
@@ -64,18 +58,9 @@ function showProducts(data) {
             _photoDiv.style.backgroundImage = `url("${linkHelperLocalVsGitHub}/assets/Sample_Photos/profils/${product["photographers"][i].portrait}")`;
 
         }
-        // _photoDiv.style.backgroundImage = "../assets/Sample_Photos/profils/Mimi.jpg";
-        //   article.innerHTML = articleContent;
-        // itemCard.innerHTML +=`
-        //   //   <p class="productDescription">${product["photographers"][i].name}</p>
-        // `;
-
     }
-
 }
-//#################ICI on recupere les li de la nav pour manager la navigation#####################
-let buttonDeLaNavPrincipale = document.getElementsByTagName("header")[0].getElementsByTagName("nav")[0].getElementsByTagName("UL")[0].getElementsByTagName("BUTTON");
-let listFiltres = [];
+
 
 
 for (let button of buttonDeLaNavPrincipale) {
@@ -98,13 +83,12 @@ for (let button of buttonDeLaNavPrincipale) {
 
 function manageList(filtre) {
     let supprimer = false;
-    //Ceci n'a pas de sens s'il y a seulement tri un filtre aprés l'autre, mais pourrat prendre son sens si le client a besoin de plusieurs. filtres à la fois. 
+    //Ceci n'a pas de sens s'il y a seulement tri un filtre aprés l'autre, mais pourrat prendre son sens si le client a besoin de plusieurs filtres à la fois. 
     for (let presentFiltre of listFiltres) {
         if (filtre == presentFiltre) {
             supprimer = true;
         }
     }
-
     if (supprimer == true) {
         let _index = listFiltres.indexOf(filtre);
         listFiltres.splice(_index, 1);
@@ -117,13 +101,11 @@ function manageList(filtre) {
         this.displayAllVignettes();
     }
 }
-
 /*Cette fonction va regarder si les filtres correspondent ou pas et vas s'occuper de masquer ou non les elements articles.*/
 function displayPhotographes() {
     let listArticles = document.getElementsByTagName("ARTICLE");
     for (let article of listArticles) {
         let display = false;
-
         /* POur chaque article */
         let lisArticle = article.getElementsByTagName('LI');
         for (let li of lisArticle) {
@@ -132,19 +114,15 @@ function displayPhotographes() {
                     display = true;
                 }
             }
-
         }
         if (display == true) {
             article.style.display = 'block';
         } else {
             article.style.display = 'none';
-
         }
-
     }
-
 }
-
+//Cette fonction s'occupe de la disposition des products de photographes quand le filtre est implémentée. 
 function manageNavBar() {
     let buttonDeLaNavPrincipale = document.getElementsByTagName("header")[0].getElementsByTagName("nav")[0].getElementsByTagName("UL")[0].getElementsByTagName("BUTTON");
     if (listFiltres.length >= 1) {
