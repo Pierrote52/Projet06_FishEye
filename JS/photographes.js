@@ -39,15 +39,12 @@ function takeCurrentPhotographe(data) {
     }
     filtrePhotos(data);
 }
-
-
 //Gere les likes de compteur Likes Total. 
 function stateLikesTotal(likes) {
     totalLikes += likes;
     compteur_likes_total_displayed.innerHTML = totalLikes;
 
 }
-
 //Cette fonction va afficher les informations du photographe.
 function displayPhotographeInfo(photographe) {
     let vignettePhotographe = document.getElementById('vignettePhotographe');
