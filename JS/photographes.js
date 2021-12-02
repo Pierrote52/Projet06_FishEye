@@ -21,14 +21,11 @@ let linkHelperLocalVsGitHub = "/Projet06_FishEye"
 
 
 const data = async() => {
-    //lien en local = https://raw.githubusercontent.com/Pierrote52/Projet06_FishEye/master/JSON.json
-    //lien sur GitHub : https://github.com/Pierrote52/Projet06_FishEye/master/JSON.json
     return await fetch('https://raw.githubusercontent.com/Pierrote52/Projet06_FishEye/master/JSON.json').then((v) => { return v.json() });
 }
 
 //https: //raw.githubusercontent.com/Pierrote52/Projet06_FishEye/master/JSON.json
 data().then(v => takeCurrentPhotographe(v));
-
 
 function takeCurrentPhotographe(data) {
     for (let photographe of data.photographers) {
@@ -53,7 +50,6 @@ function displayPhotographeInfo(photographe) {
     let slogan = vignettePhotographe.getElementsByTagName("H3")[0];
     let photoProfil = vignettePhotographe.getElementsByTagName("DIV")[0];
     let ulFiltres = vignettePhotographe.getElementsByTagName("UL")[0];
-
     //Assigner les variables.
     name.innerHTML = photographe.name;
     localistion.innerHTML = `${photographe.city}, ${photographe.country}`;
@@ -66,7 +62,6 @@ function displayPhotographeInfo(photographe) {
         ulFiltres.appendChild(li);
     }
 }
-
 //Cette fonction va recuperer les photos présentes dans la galerie pour les afficher. 
 function filtrePhotos(data) {
     //Pour chaque media présent dans la collection nous allons vérifier si l'id du medi correspond à l'id du photographe. 
@@ -111,7 +106,7 @@ function createVideo(media) {
         "<p>" +
         media.title +
         "</p>" +
-        "<div><p>" + media.likes + `</p><button type="button"><img src='${linkHelperLocalVsGitHub}/assets/logos/heart-solid.svg' width='20'></button></div>` +
+        "<div><p>" + media.likes + `</p><button type="button"><img src='${linkHelperLocalVsGitHub}/assets/logos/heart-solid.svg' width='20' alt="coeur j'aime"></button></div>` +
         "</div>";
     //Recupere la div des likes et logo coeur. 
     let counterEtLikes = article.getElementsByTagName("DIV")[2];
@@ -142,7 +137,7 @@ function createPhoto(media) {
         "<p>" +
         media.title +
         "</p>" +
-        "<div><p class='likes'>" + media.likes + `</p><button type="button"><img src='${linkHelperLocalVsGitHub}/assets/logos/heart-solid.svg' width='20'></button></div>` +
+        "<div><p class='likes'>" + media.likes + `</p><button type="button"><img src='${linkHelperLocalVsGitHub}/assets/logos/heart-solid.svg' width='20' alt="coeur j'aime"></button></div>` +
         "</div>";
     //Recupere la div des likes et logo heart. 
     let counterEtLikes = article.getElementsByTagName("DIV")[2];
@@ -152,6 +147,7 @@ function createPhoto(media) {
         let newInt = parseInt(newP.innerHTML) + 1;
         stateLikesTotal(1);
         newP.innerHTML = newInt;
+
     })
     let img = article.getElementsByTagName("a")[0];
     img.addEventListener("click", (e) => {
@@ -161,6 +157,7 @@ function createPhoto(media) {
     let url = getUrlMedia(media.image);
     let divMedia = article.getElementsByTagName("DIV")[0];
     divMedia.style.backgroundImage = `url(${url})`;
+    divMedia.ariaLabel = "une photo, " + media.title;
     section.appendChild(article);
 }
 //Display la lightBox par index, ici nous allons rentrer l'index du media que nous voulons disposer ans la lighBox. 
@@ -203,7 +200,7 @@ function displayLighBoxByIndex(indexOfMedia) {
         media = lightBox.getElementsByClassName("photo")[0];
         let url = getUrlMedia(listMedia[indexOfMedia].video);
         media.style.backgroundImage = "none";
-        let video = `<video controls src="${url}"></video>`;
+        let video = `<video controls src="${url}" aria-label="${listMedia[indexOfMedia].title}"></video>`;
         media.innerHTML = video;
     }
     //Gere le click sur le chevron back. 
@@ -241,7 +238,7 @@ function displayLighBoxByIndex(indexOfMedia) {
         } else if (nouveauMedia.video != null) {
             let url = getUrlMedia(listMedia[indexOfMedia].video);
             media.style.backgroundImage = "none"
-            let video = `<video controls src="${url}" width="100%"></video>`;
+            let video = `<video controls src="${url}" width="100%" alt="${listMedia[indexOfMedia].title}"></video>`;
             media.innerHTML = video;
         }
 

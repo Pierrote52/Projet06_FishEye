@@ -44,7 +44,7 @@ function showProducts(data) {
     for (let product of data) {
         for (let i = 0; i < product.photographers.length; i++) {
             var article = document.createElement("ARTICLE");
-            var articleContent = `<a href = "${linkHelperLocalVsGitHub}/photographe.html?id=${product["photographers"][i].id}"><div id ="${product["photographers"][i].portrait}"></div><h2>${product["photographers"][i].name}</h2><h3>${product["photographers"][i].city}</h3><h4>${product["photographers"][i].tagline}</h4><p>${product["photographers"][i].price}€/jour</p><ul></ul></a>`
+            var articleContent = `<a href = "${linkHelperLocalVsGitHub}/photographe.html?id=${product["photographers"][i].id}"><div id ="${product["photographers"][i].portrait}" aria-label="Avatar du photographe"></div><h2>${product["photographers"][i].name}</h2><h3>${product["photographers"][i].city}</h3><h4>${product["photographers"][i].tagline}</h4><p>${product["photographers"][i].price}€/jour</p><ul></ul></a>`
             article.innerHTML = articleContent;
             let ul = article.getElementsByTagName("UL")[0];
             //Je vais creer les Tags pour mes Photographes.
