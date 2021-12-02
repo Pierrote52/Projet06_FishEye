@@ -15,7 +15,7 @@ let totalLikes = 0;
 
 //Ici nous allons implementer une variable qui va gerer si nous sommes en Local ou sur GitHub. 
 // Cette variable doit etre egale à "/Projet06_FishEye" si nous sommes sur GitHub, sinon en Local ce sera "." .
-let linkHelperLocalVsGitHub = "/Projet06_FishEye"
+let linkHelperLocalVsGitHub = "."
 
 
 const data = async() => {
@@ -46,7 +46,7 @@ function displayPhotographeInfo(photographe) {
     let slogan = vignettePhotographe.getElementsByTagName("H3")[0];
     let photoProfil = vignettePhotographe.getElementsByTagName("DIV")[0];
     let ulFiltres = vignettePhotographe.getElementsByTagName("UL")[0];
-   
+
     //Assigner les variables.
     name.innerHTML = photographe.name;
     localistion.innerHTML = `${photographe.city}, ${photographe.country}`;
@@ -288,65 +288,66 @@ btnEnvoyer.addEventListener('click', function(event) {
     //Ici il va falloir implementer les contrôles de champ.
 
     //Ici on contrôle si le champ du prénom est valide. 
-    if(controleName(document.getElementById('fprenom').value)==true) {
-        champValid(document.getElementById('invalid_prenom'),);
+    if (controleName(document.getElementById('fprenom').value) == true) {
+        champValid(document.getElementById('invalid_prenom'), );
         this.prenom = document.getElementById('invalid_prenom')
-    }else {
-     errorMessageDisplay(document.getElementById('invalid_prenom'));
-     this.prenom =null;
-   }
-     //Ici on contrôle si le champ du nom est valide. 
-   if(controleName(document.getElementById('lnom').value)==true){
-       //Ici nous envoyon à la fonction qui gere la disposition du texte suivant sa validité ou non. 
-    champValid(document.getElementById('invalid_nom'),);
-    this.nom = document.getElementById('lnom').value;
-   }else {
-       errorMessageDisplay(document.getElementById('invalid_nom'));
-       this.nom =null;
+    } else {
+        errorMessageDisplay(document.getElementById('invalid_prenom'));
+        this.prenom = null;
+    }
+    //Ici on contrôle si le champ du nom est valide. 
+    if (controleName(document.getElementById('lnom').value) == true) {
+        //Ici nous envoyon à la fonction qui gere la disposition du texte suivant sa validité ou non. 
+        champValid(document.getElementById('invalid_nom'), );
+        this.nom = document.getElementById('lnom').value;
+    } else {
+        errorMessageDisplay(document.getElementById('invalid_nom'));
+        this.nom = null;
     }
 
     //Ici on controle si le mail est valid ou pas et on sprécifié cette information à l'utilisateur. 
-    if(controleEmail(document.getElementById('lemail').value)==true){
+    if (controleEmail(document.getElementById('lemail').value) == true) {
         //Ici nous envoyon à la fonction qui gere la disposition du texte suivant sa validité ou non. 
-     champValid(document.getElementById('invalid_email'),);
-     this.email = document.getElementById('lemail').value;
-    }else {
+        champValid(document.getElementById('invalid_email'), );
+        this.email = document.getElementById('lemail').value;
+    } else {
         errorMessageDisplay(document.getElementById('invalid_email'));
-        this.email =null;
-     }
-     if(document.getElementById('lmessage').value.length>1){
+        this.email = null;
+    }
+    if (document.getElementById('lmessage').value.length > 1) {
         //Ici nous envoyon à la fonction qui gere la disposition du texte suivant sa validité ou non. 
-     champValid(document.getElementById('invalid_message'),);
-     this.message = document.getElementById('lmessage').value;
-    }else {
+        champValid(document.getElementById('invalid_message'), );
+        this.message = document.getElementById('lmessage').value;
+    } else {
         errorMessageDisplay(document.getElementById('invalid_message'));
-        this.message =null;
-     }
+        this.message = null;
+    }
     //Verification que le formulaire est correctement rempli. 
-    if(this.prenom!=null&&this.nom!=null&&this.email!=null){
+    if (this.prenom != null && this.nom != null && this.email != null) {
         console.log('Le formulaire est correctement remplit : ')
         console.log('Prenom : ' + this.prenom);
         console.log('Nom : ' + this.nom);
-        console.log('E-mail : '+ this.email );
-        console.log('Message : ' + this.message.length!= 0 ? this.message:"Auccun message laissé...");
+        console.log('E-mail : ' + this.email);
+        console.log('Message : ' + this.message.length != 0 ? this.message : "Auccun message laissé...");
         closeForm()
 
     }
 
 
 
-    })
+})
 
 
-    function errorMessageDisplay(messageHtml){
-        messageHtml.style.display = "block";
+function errorMessageDisplay(messageHtml) {
+    messageHtml.style.display = "block";
 
-    }
-    function champValid(messageHtml){
-        messageHtml.style.display = "none";
+}
 
-    }
-    //Gere les likes de compteur Likes Total. 
+function champValid(messageHtml) {
+    messageHtml.style.display = "none";
+
+}
+//Gere les likes de compteur Likes Total. 
 function stateLikesTotal(likes) {
     totalLikes += likes;
     compteur_likes_total_displayed.innerHTML = totalLikes;
@@ -398,26 +399,26 @@ function trierMediaParDate() {
 
 
 //Fonction qui contrôle les informations saisies dans le champ de saisie du nom et aussi du prénom.
-function controleName(champ){
-    if (/^[A-Za-zéèàç-]+$/.test(champ) ){
+function controleName(champ) {
+    if (/^[A-Za-zéèàç-]+$/.test(champ)) {
         return true;
 
-}else{
-    //Si le champ de saisie ne fonctionne pas. 
-  
-    return false;
-}
+    } else {
+        //Si le champ de saisie ne fonctionne pas. 
+
+        return false;
+    }
 
 }
 //Cette ffonction contrôle que la valeur mail soit bien au format e-mail.
-function controleEmail(mail){
-    if(/^([a-z]||[0-9]||[-|.|/|=|+|,|?|è|é|"|'|(|&|$|*)])+[@]{1}([a-z]||[0-9]||[-|.|/|=|+|,|?|è|é|"|'|(|&|$|*)]){3,}[.]{1}[a-z]{2,3}$/.test(mail)){
-     
+function controleEmail(mail) {
+    if (/^([a-z]||[0-9]||[-|.|/|=|+|,|?|è|é|"|'|(|&|$|*)])+[@]{1}([a-z]||[0-9]||[-|.|/|=|+|,|?|è|é|"|'|(|&|$|*)]){3,}[.]{1}[a-z]{2,3}$/.test(mail)) {
+
         return true;
-    
-      } else {
+
+    } else {
         return false;
-      }
+    }
 
 
 }
