@@ -235,9 +235,11 @@ function displayLighBoxByIndex(indexOfMedia) {
             let url = getUrlMedia(listMedia[indexOfMedia].image);
             media.innerHTML = "";
             media.style.backgroundImage = `url(${url})`;
+            media.ariaLabel = "photo qui a pour titre " + nouveauMedia.title;
         } else if (nouveauMedia.video != null) {
             let url = getUrlMedia(listMedia[indexOfMedia].video);
-            media.style.backgroundImage = "none"
+            media.style.backgroundImage = "none";
+            media.ariaLabel = "video qui a pour titre " + nouveauMedia.title;
             let video = `<video controls src="${url}" width="100%" alt="${listMedia[indexOfMedia].title}"></video>`;
             media.innerHTML = video;
         }
