@@ -95,12 +95,12 @@ function createVideo(media) {
     stateLikesTotal(media.likes);
     let urlVideo = getUrlMedia(media.video);
     let article = document.createElement("ARTICLE");
-    article.innerHTML = `<a href= '#'><div class= "image"><video src= "${urlVideo}" ></video></div></a>` +
+    article.innerHTML = `<a href= '#'><div class= "image"><video src= "${urlVideo}" aria-label="${media.title}"></video></div></a>` +
         "<div class = \"TitreEtLikes\">" +
         "<p>" +
         media.title +
         "</p>" +
-        "<div><p>" + media.likes + `</p><button type="button"><img src='${linkHelperLocalVsGitHub}/assets/logos/heart-solid.svg' width='20'></button></div>` +
+        "<div><p>" + media.likes + `</p><button type="button"><img src='${linkHelperLocalVsGitHub}/assets/logos/heart-solid.svg' width='20' alt="coeur j'aime"></button></div>` +
         "</div>";
     //Recupere la div des likes et logo heart. 
     let counterEtLikes = article.getElementsByTagName("DIV")[2];
@@ -129,7 +129,7 @@ function createPhoto(media) {
         "<p>" +
         media.title +
         "</p>" +
-        "<div><p class='likes'>" + media.likes + `</p><button type="button"><img src='${linkHelperLocalVsGitHub}/assets/logos/heart-solid.svg' width='20'></button></div>` +
+        "<div><p class='likes'>" + media.likes + `</p><button type="button"><img src='${linkHelperLocalVsGitHub}/assets/logos/heart-solid.svg' width='20' alt="coeur j'aime"></button></div>` +
         "</div>";
     //Recupere la div des likes et logo heart. 
     let counterEtLikes = article.getElementsByTagName("DIV")[2];
@@ -148,6 +148,9 @@ function createPhoto(media) {
     let url = getUrlMedia(media.image);
     let divMedia = article.getElementsByTagName("DIV")[0];
     divMedia.style.backgroundImage = `url(${url})`;
+    divMedia.ariaLabel = "une photo, " + media.title;
+
+
     section.appendChild(article);
 }
 //Display la lightBox par index.
@@ -224,10 +227,12 @@ function displayLighBoxByIndex(indexOfMedia) {
             let url = getUrlMedia(listMedia[indexOfMedia].image);
             media.innerHTML = "";
             media.style.backgroundImage = `url(${url})`;
+            media.ariaLabel = "photo qui a pour titre " + nouveauMedia.title;
         } else if (nouveauMedia.video != null) {
             let url = getUrlMedia(listMedia[indexOfMedia].video);
-            media.style.backgroundImage = "none"
-            let video = `<video controls src="${url}" width="100%"></video>`;
+            media.style.backgroundImage = "none";
+
+            let video = `<video controls src="${url}" width="100%" aria-label="une video"></video>`;
             media.innerHTML = video;
         }
 
@@ -262,7 +267,6 @@ function displayFormContact() {
             closeForm();
         }
     });
-
     premierInput.focus();
 
 }
