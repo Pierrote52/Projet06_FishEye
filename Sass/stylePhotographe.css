@@ -370,16 +370,14 @@
     top: 30%;
     left: 45%;
     position: absolute;
-    padding: 0 2ex 0 2ex;
+    padding: 1rem 2ex 1rem 2ex;
     background-color: #901C1C;
     border-radius: 5px;
     border-width: 0;
-    font-size: inherit;
-  }
-  body #corpsPrincipale #vignettePhotographe #btn-ContactezMoi p {
     font-family: "DMSansSmall";
-    font-size: 2ex;
-    color: beige;
+    font-size: 1.2em;
+    color: white;
+    font-weight: bold;
   }
   body #corpsPrincipale #myNavigator {
     position: relative;

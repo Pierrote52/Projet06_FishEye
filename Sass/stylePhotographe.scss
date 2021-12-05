@@ -338,16 +338,15 @@
                         top: 30%;
                         left: 45%;
                         position: absolute;
-                        padding: 0 2ex 0 2ex;
+                        padding: 1rem 2ex 1rem 2ex;
                         background-color: $colorPrimary;
                         border-radius: 5px;
                         border-width: 0;
-                        font-size: inherit;
-                        p {
-                            font-family: $fontPrincipalSmall;
-                            font-size: 2ex;
-                            color: beige;
-                        }
+                        font-family: $fontPrincipalSmall;
+                        font-size: 1.2em;
+                        color: white;
+                        font-weight: bold;
+                        
                     }
                 }
                 #myNavigator {
