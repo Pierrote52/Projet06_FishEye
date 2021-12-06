@@ -300,7 +300,7 @@ btnEnvoyer.addEventListener('click', function(event) {
     //Ici on contrôle si le champ du prénom est valide. 
     if (controleName(document.getElementById('fprenom').value) == true) {
         champValid(document.getElementById('invalid_prenom'), );
-        this.prenom = document.getElementById('invalid_prenom')
+        this.prenom = document.getElementById('fprenom').value
     } else {
         errorMessageDisplay(document.getElementById('invalid_prenom'));
         this.prenom = null;
