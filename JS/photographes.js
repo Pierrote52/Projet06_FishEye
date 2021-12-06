@@ -339,7 +339,7 @@ btnEnvoyer.addEventListener('click', function(event) {
         console.log('Prenom : ' + this.prenom);
         console.log('Nom : ' + this.nom);
         console.log('E-mail : ' + this.email);
-        console.log('Message : ' + this.message.length != 0 ? this.message : "Auccun message laissé...");
+        console.log('Message : ' + this.message != null ? this.message : "Auccun message laissé...");
         closeForm();
     }
 })
